@@ -1,0 +1,139 @@
+[
+  {
+    "id": "1",
+    "questionText": "What's the output?",
+    "questionCode": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc main() {\n\t\n}",
+    "tags": ["Go"],
+    "answers": [
+      {
+        "id": "1",
+        "answerText": "Panic"
+      },
+      {
+        "id": "2",
+        "answerText": "2"
+      },
+      {
+        "id": "3",
+        "answerText": "test"
+      },
+      {
+        "id": "4",
+        "answerText": "4"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "questionText": "What's the output?",
+    "questionCode": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc main() {\n\t\n}",
+    "tags": ["Go"],
+    "answers": [
+      {
+        "id": "1",
+        "answerText": "1"
+      },
+      {
+        "id": "2",
+        "answerText": "Panic"
+      },
+      {
+        "id": "3",
+        "answerText": "Not valid"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "questionText": "Is this following statement true?",
+    "tags": ["Go"],
+    "answers": [
+      {
+        "id": "1",
+        "answerText": "true"
+      },
+      {
+        "id": "2",
+        "answerText": "false"
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "questionText": "What's the output?",
+    "answers": [
+      {
+        "id": "1",
+        "answerText": "Panic"
+      },
+      {
+        "id": "2",
+        "answerText": "Not panic"
+      },
+      {
+        "id": "3",
+        "answerText": "4"
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "questionText": "What's the output?",
+    "questionCode": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc main() {\n\t\n}",
+    "answers": [
+      {
+        "id": "1",
+        "answerText": "1"
+      },
+      {
+        "id": "2",
+        "answerText": "2",
+        "answersCode": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc main() {\n\t\n}"
+      },
+      {
+        "id": "3",
+        "answerText": "3"
+      },
+      {
+        "id": "4",
+        "answerText": "4"
+      }
+    ]
+  },
+  {
+    "id": "6",
+    "questionText": "What correct way declare array?",
+    "answers": [
+      {
+        "id": "1",
+        "answerText": "Like this"
+      },
+      {
+        "id": "2",
+        "answerCode": "Array = []"
+      },
+      {
+        "id": "3",
+        "answerCode": "Array = {}"
+      },
+      {
+        "id": "4",
+        "answerCode": "Struct Array{}"
+      }
+    ]
+  },
+  {
+    "id": "7",
+    "questionText": "Is following code valid?",
+    "answers": [
+      {
+        "id": "1",
+        "answerText": "Yes"
+      },
+      {
+        "id": "2",
+        "answerText": "No"
+      }
+    ]
+  }
+]

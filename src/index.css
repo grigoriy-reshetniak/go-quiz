@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #202224;
+  background-color: #323233;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -20,11 +20,6 @@ body {
   justify-content: center;
   min-width: 320px;
   min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
 }
 
 h2 {
@@ -46,13 +41,13 @@ h2 {
 .answer {
   display: flex;
   margin: 1.5rem 0;
-  padding: 1.2rem;
+  padding: 1.2rem 0.5rem 1.2rem;
   background-color: #253443;
 
   border: 3px solid #253443;
   border-radius: 20px;
 
-  font-size: 1.5em;
+  font-size: 1.65em;
 
   cursor: pointer;
 
@@ -73,13 +68,13 @@ h2 {
     width: 0;
   }
 
-  span {
+  span:last-child {
     position: relative;
-    padding-left: 2.3rem;
+    padding-left: 2.5rem;
     line-height: 1.5rem;
   }
 
-  span:before {
+  span:last-child:before {
     content: '';
     position: absolute;
     left: 0;
@@ -90,29 +85,56 @@ h2 {
     border-radius: 4px;
   }
 
-  input:checked + span:before {
-    background-color: #4CAF50;
+  input:checked + .checkmark {
+    visibility: visible;
   }
 
-  span:after {
-    content: '';
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    width: 14px;
-    height: 14px;
-    background-color: #4CAF50;
-    opacity: 0;
-    border-radius: 2px;
-  }
-
-  span:checked + span:after {
-    opacity: 1;
+  .checkmark {
+    position: relative;
+    top: 0.25rem;
+    left: 1.12rem;
+    width: 7px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+    visibility: hidden;
   }
 }
 
 .selected {
   border-color: #035b71;
+
+  &:hover {
+    background-color: #01728e;
+    border-color: #035b71;
+  }
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5.5rem;
+
+  button {
+    padding: 0.5rem 1rem;
+    font-size: 1.2em;
+    background-color: #253443;
+    border: 3px solid #253443;
+    border-radius: 20px;
+    color: rgba(255, 255, 255, 0.87);
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+
+    &:hover {
+      background-color: #035b71;
+      border-color: #0ba6ca;
+    }
+
+    &:active {
+      border-color: rgba(255, 255, 255, 0.87);
+    }
+  }
 }
 
 .correct {

@@ -1,14 +1,29 @@
-export type QuestionT = {
+export type Question = {
     id: string,
     questionText: string,
-    isMultipleChoice: boolean,
-    answers: AnswerT[],
+    questionCode?: string,
+    answers: Answer[],
     points: number,
-    answersAmount: number,
+    tags: string[],
 };
 
-export type AnswerT = {
+export type Answer = TextAnswer | CodeAnswer;
+
+type BaseAnswer = {
     id: string,
+};
+
+type TextAnswer = BaseAnswer & {
     answerText: string,
-    isCorrect: boolean,
+    answerCode: never,
+};
+
+type CodeAnswer = BaseAnswer & {
+    answerText: never,
+    answerCode: string,
+};
+
+export type AnsweredQuestion = {
+    questionId: string,
+    selectedAnswers: string[],
 };
