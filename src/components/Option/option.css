@@ -1,0 +1,72 @@
+.answer {
+  display: flex;
+  margin: 1.5rem 0;
+  padding: 1.2rem 0.5rem 1.2rem;
+  background-color: #253443;
+
+  border: 3px solid #253443;
+  border-radius: 20px;
+
+  font-size: 1.65em;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: #035b71;
+    border-color: #0ba6ca;
+  }
+
+  &:active {
+    border-color: rgba(255, 255, 255, 0.87);
+  }
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  span:last-child {
+    position: relative;
+    padding-left: 2.5rem;
+    line-height: 1.5rem;
+  }
+
+  span:last-child:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.87);
+    border-radius: 4px;
+  }
+
+  input:checked + .checkmark {
+    visibility: visible;
+  }
+
+  .checkmark {
+    position: relative;
+    top: 0.25rem;
+    left: 1.12rem;
+    width: 7px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+    visibility: hidden;
+  }
+}
+
+.selected {
+  border-color: #035b71;
+
+  &:hover {
+    background-color: #01728e;
+    border-color: #035b71;
+  }
+}

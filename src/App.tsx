@@ -1,8 +1,9 @@
 import { ChangeEvent, useState } from 'react';
 import { AnsweredQuestion } from './types.ts';
-import { Option } from './components/Option.tsx';
+import { Option } from './components/Option';
 import type { Question } from './types.ts';
 import questions from '../data/mockData.json';
+import { Header } from './components/Header';
 
 const quiz = questions as Question[];
 
@@ -36,21 +37,32 @@ export const App = () => {
     console.log(answeredQuestions);
   }
 
+  const handleReset = () => {
+    if (confirm('Are you sure you want to reset the quiz? Your progress will be lost.')) {
+      setQuestionIndex(0);
+      setAnsweredQuestions([]);
+      setSelectedAnswers([]);
+    }
+  }
+
   return (
     <>
-      <div>
-        <h2>{quiz[questionIndex].questionText}</h2>
-        {quiz[questionIndex].answers.map((answer) => (
-          <Option
-            answer={answer}
-            key={answer.id}
-            selectAnswer={handleAnswerChange}
-            isSelected={selectedAnswers.includes(answer.id)}
-            checked={selectedAnswers.includes(answer.id)}
-          />
-        ))}
-      </div>
-      <div className="controls">
+      <Header handleReset={handleReset} handleFinish={handleFinish}/>
+      <div className="container">
+        <div>
+          <h2>{quiz[questionIndex].questionText}</h2>
+          <code>{quiz[questionIndex].questionCode}</code>
+          {quiz[questionIndex].answers.map((answer) => (
+            <Option
+              answer={answer}
+              key={answer.id}
+              selectAnswer={handleAnswerChange}
+              isSelected={selectedAnswers.includes(answer.id)}
+              checked={selectedAnswers.includes(answer.id)}
+            />
+          ))}
+        </div>
+
         {questionIndex === quiz.length - 1 ? (
           <button
             onClick={handleFinish}

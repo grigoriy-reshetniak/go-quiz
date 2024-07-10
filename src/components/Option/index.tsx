@@ -1,5 +1,5 @@
 import { ChangeEvent } from 'react';
-import type { Answer } from '../types.ts';
+import type { Answer } from '../../types.ts';
 
 interface AnswerProps {
   answer: Answer;
