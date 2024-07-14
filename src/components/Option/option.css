@@ -1,19 +1,19 @@
 .answer {
   display: flex;
-  margin: 1.5rem 0;
+  margin-top: 1rem;
   padding: 1.2rem 0.5rem 1.2rem;
-  background-color: #253443;
+  background-color: #0d1117;
+  color: #F8F8F8FF;
 
   border: 3px solid #253443;
-  border-radius: 20px;
+  border-radius: 1rem;
 
-  font-size: 1.65em;
+  font-size: 16px;
 
   cursor: pointer;
 
   &:hover {
-    background-color: #035b71;
-    border-color: #0ba6ca;
+    border-color: rgb(255, 255, 182);
   }
 
   &:active {
@@ -28,21 +28,28 @@
     width: 0;
   }
 
-  span:last-child {
+  .answer-text {
     position: relative;
     padding-left: 2.5rem;
     line-height: 1.5rem;
-  }
 
-  span:last-child:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 1.5rem;
-    height: 1.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.87);
-    border-radius: 4px;
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1.5rem;
+      height: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.87);
+      border-radius: 4px;
+    }
+
+    code {
+      font-family: "Go", monospace;
+      padding: .2rem .4rem;
+      background-color: #343941;
+      border-radius: 6px;
+    }
   }
 
   input:checked + .checkmark {
@@ -53,8 +60,8 @@
     position: relative;
     top: 0.25rem;
     left: 1.12rem;
-    width: 7px;
-    height: 12px;
+    width: 0.5rem;
+    height: 0.75rem;
     border: solid white;
     border-width: 0 3px 3px 0;
     transform: rotate(45deg);
@@ -63,10 +70,14 @@
 }
 
 .selected {
-  border-color: #035b71;
+  background-color: #035b71;
+  border-color: #0ba6ca;
 
   &:hover {
-    background-color: #01728e;
-    border-color: #035b71;
+    border-color: rgb(255, 255, 182);
+  }
+
+  code {
+    background-color: #4d5e71 !important;
   }
 }

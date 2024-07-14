@@ -1,11 +1,19 @@
-@import url('./components/Header/header.css');
-@import url('./components/Option/option.css');
+@import url(./components/Header/header.css);
+@import url(./components/Option/option.css);
+@import url(./components/CodePreview/code-preview.css);
 
 @font-face {
   font-family: 'Majorant';
   src: url('../assets/fonts/MajorantTRIAL-BlkIt.otf') format('opentype');
   font-weight: bold;
   font-style: italic;
+}
+
+@font-face {
+  font-family: 'Go';
+  src: url('../assets/fonts/Go-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 :root {
@@ -24,20 +32,12 @@
 
 body {
   margin: 0;
-  /*display: flex;*/
-  /*justify-content: center;*/
   min-width: 320px;
-  min-height: 100vh;
-}
-
-h2 {
-  font-size: 2.4em;
-  line-height: 1.1;
 }
 
 button {
   padding: 1rem 2.2rem;
-  font-size: 2.2em;
+  font-size: 2.2rem;
   background-color: #253443;
   border: 3px solid #253443;
   border-radius: 20px;
@@ -64,6 +64,21 @@ button {
   &:active {
     border-color: rgba(255, 255, 255, 0.87);
   }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.quiz {
+  border: 2px solid rgba(37, 52, 67, 0.51);
+  width: 50%;
+  margin: 0.5rem 0;
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  border-radius: 8px;
 }
 
 .correct {

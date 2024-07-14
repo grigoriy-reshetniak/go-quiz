@@ -2,24 +2,28 @@
   {
     "id": "1",
     "questionText": "What's the output?",
-    "questionCode": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc main() {\n\t\n}",
+    "questionCode": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc main() {\n\t\n}{\n\t}{\n\t}",
     "tags": ["Go"],
     "answers": [
       {
         "id": "1",
-        "answerText": "Panic"
+        "answerText": "package main",
+        "isCode": true
       },
       {
         "id": "2",
-        "answerText": "2"
+        "answerText": "package main\nimport\nimport\nimport\nimport",
+        "isCode": true
       },
       {
         "id": "3",
-        "answerText": "test"
+        "answerText": "package main",
+        "isCode": false
       },
       {
         "id": "4",
-        "answerText": "4"
+        "answerText": "package main\nimport\nimport\nimport\nimport",
+        "isCode": true
       }
     ]
   },

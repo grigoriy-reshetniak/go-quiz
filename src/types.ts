@@ -7,20 +7,10 @@ export type Question = {
     tags: string[],
 };
 
-export type Answer = TextAnswer | CodeAnswer;
-
-type BaseAnswer = {
+export type Answer = {
     id: string,
-};
-
-type TextAnswer = BaseAnswer & {
     answerText: string,
-    answerCode: never,
-};
-
-type CodeAnswer = BaseAnswer & {
-    answerText: never,
-    answerCode: string,
+    isCode: boolean,
 };
 
 export type AnsweredQuestion = {

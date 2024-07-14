@@ -9,8 +9,10 @@ interface AnswerProps {
 }
 
 export const Option = ({ answer, isSelected, selectAnswer, checked }: AnswerProps) => {
+  const answerClass = `answer ${isSelected ? 'selected' : ''}`;
+
   return (
-    <label className={`answer ${isSelected ? 'selected' : ''}`}>
+    <label className={answerClass}>
       <input
         type="checkbox"
         name="answer"
@@ -19,8 +21,9 @@ export const Option = ({ answer, isSelected, selectAnswer, checked }: AnswerProp
         checked={checked}
       />
       <span className="checkmark"/>
-      {answer.answerText && <span>{answer.answerText}</span>}
-      {answer.answerCode && <code>{answer.answerCode}</code>}
+      <span className="answer-text">
+        {answer.isCode ? <code>{answer.answerText}</code> : answer.answerText}
+      </span>
     </label>
   );
 }
