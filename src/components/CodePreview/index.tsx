@@ -1,5 +1,6 @@
 import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { irBlack } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+// import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { gruvboxLight } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import go from 'react-syntax-highlighter/dist/esm/languages/hljs/go';
 
 SyntaxHighlighter.registerLanguage('go', go);
@@ -13,7 +14,7 @@ export const CodePreview = ({ code }: CodePreviewProps) => {
     <div className="code-preview">
       <SyntaxHighlighter
         language="go"
-        style={irBlack}
+        style={gruvboxLight}
         showLineNumbers={true}
         customStyle={{
           padding: '1rem',

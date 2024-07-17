@@ -1,0 +1,60 @@
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 2rem;
+  height: 5.05rem;
+
+  background-color: #253443;
+  border-top: 1px solid #6e7072;
+
+  font-weight: 500;
+  line-height: 1.5;
+
+  a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.87);
+
+    transition: color 0.3s;
+
+    &:hover {
+      color: #17d0fa;
+    }
+  }
+
+  img {
+    height: 1.5rem;
+  }
+
+  .by-me-a-coffee {
+    height: 3rem;
+  }
+
+  .subsection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    a:first-child {
+      margin-right: 2rem;
+    }
+  }
+
+  .github {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    img {
+      margin-right: 0.5rem;
+      transition: filter 0.3s ease-out;
+    }
+
+    &:hover {
+      img {
+        filter: invert(30%) sepia(98%) saturate(459%) hue-rotate(165deg) brightness(95%) contrast(92%);
+      }
+    }
+  }
+}

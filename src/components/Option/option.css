@@ -2,10 +2,13 @@
   display: flex;
   margin-top: 1rem;
   padding: 1.2rem 0.5rem 1.2rem;
-  background-color: #0d1117;
+  /*background-color: #0d1117;*/
   color: #F8F8F8FF;
 
-  border: 3px solid #253443;
+  /*background-color: #035b71;*/
+  /*border-color: #0ba6ca;*/
+
+  border: 2px solid #035b71;
   border-radius: 1rem;
 
   font-size: 16px;
@@ -47,7 +50,7 @@
     code {
       font-family: "Go", monospace;
       padding: .2rem .4rem;
-      background-color: #343941;
+      background-color: #707d87;
       border-radius: 6px;
     }
   }
@@ -70,14 +73,10 @@
 }
 
 .selected {
-  background-color: #035b71;
-  border-color: #0ba6ca;
-
-  &:hover {
-    border-color: rgb(255, 255, 182);
-  }
+  background-color: #0d1117;
+  border-color: #00add8;
 
   code {
-    background-color: #4d5e71 !important;
+    background-color: #343941 !important;
   }
 }

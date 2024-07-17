@@ -8,21 +8,21 @@
   }
 }
 
-.code-preview::-webkit-scrollbar {
-  width: 12px;
-  border-radius: 3px;
-}
+/*.code-preview::-webkit-scrollbar {*/
+/*  width: 12px;*/
+/*  border-radius: 3px;*/
+/*}*/
 
-.code-preview::-webkit-scrollbar-track {
-  background: #000;
-  border-radius: 0 1rem 1rem 0;
-}
+/*.code-preview::-webkit-scrollbar-track {*/
+/*  background: #000;*/
+/*  border-radius: 0 1rem 1rem 0;*/
+/*}*/
 
-.code-preview::-webkit-scrollbar-thumb {
-  background: #555;
-  border-radius: 1rem;
-}
+/*.code-preview::-webkit-scrollbar-thumb {*/
+/*  background: #555;*/
+/*  border-radius: 1rem;*/
+/*}*/
 
-.code-preview::-webkit-scrollbar-thumb:hover {
-  background: #666;
-}
+/*.code-preview::-webkit-scrollbar-thumb:hover {*/
+/*  background: #666;*/
+/*}*/

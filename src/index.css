@@ -1,6 +1,7 @@
 @import url(./components/Header/header.css);
 @import url(./components/Option/option.css);
 @import url(./components/CodePreview/code-preview.css);
+@import url(./components/Footer/footer.css);
 
 @font-face {
   font-family: 'Majorant';
@@ -21,7 +22,10 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color: rgba(255, 255, 255, 0.87);
+  display: flex;
+  flex-direction: column;
+
+  color: #FFFFFFDD;
   background-color: #007d9c;
 
   font-synthesis: none;
@@ -44,6 +48,7 @@ button {
   color: rgba(255, 255, 255, 0.87);
   cursor: pointer;
   transition: background-color 0.2s, border-color 0.2s;
+  margin: 0.25rem 0 0.75rem 0;
 
   &:disabled {
     background-color: #3a3a3a;

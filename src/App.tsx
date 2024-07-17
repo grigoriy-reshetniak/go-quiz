@@ -5,6 +5,7 @@ import type { Question } from './types.ts';
 import questions from '../data/mockData.json';
 import { Header } from './components/Header';
 import { CodePreview } from './components/CodePreview';
+import { Footer } from './components/Footer';
 
 const quiz = questions as Question[];
 
@@ -82,6 +83,7 @@ export const App = () => {
           </button>
         )}
       </main>
+      <Footer />
     </>
   )
 }
