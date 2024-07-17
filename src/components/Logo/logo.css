@@ -1,0 +1,14 @@
+.logo {
+  font-family: Majorant, sans-serif;
+  height: 3rem;
+  color: #fff;
+
+  span {
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: -0.07rem;
+    position: relative;
+    top: -1.7rem;
+    left: -0.8rem;
+  }
+}

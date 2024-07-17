@@ -1,7 +1,9 @@
-@import url(./components/Header/header.css);
 @import url(./components/Option/option.css);
 @import url(./components/CodePreview/code-preview.css);
 @import url(./components/Footer/footer.css);
+@import url(./components/Disclaimer/disclaimer.css);
+@import url(./components/Logo/logo.css);
+@import url(./components/Timer/timer.css);
 
 @font-face {
   font-family: 'Majorant';
@@ -89,4 +91,13 @@ main {
 .correct {
   background-color: #09a804;
   border-color: #1b6805;
+}
+
+header {
+  margin: 1rem 1rem 0 1rem;
+  display: flex;
+
+  .logo {
+    cursor: pointer;
+  }
 }
