@@ -3,7 +3,7 @@ export const Footer = () => {
     <footer>
       <div className="subsection">
         <a href="https://github.com/grigoriy-reshetniak" target="_blank" rel="noopener noreferrer">
-          <span>by Grigoriy Reshetniak</span>
+          by Grigoriy Reshetniak
         </a>
         <a
           href="https://www.buymeacoffee.com/"
@@ -42,7 +42,7 @@ export const Footer = () => {
           />
         </a>
         <a href="https://github.com/KiteShi" target="_blank" rel="noopener noreferrer">
-          <span>Questions by Kateryna Azarenko</span>
+          Questions by Kateryna Azarenko
         </a>
       </div>
     </footer>

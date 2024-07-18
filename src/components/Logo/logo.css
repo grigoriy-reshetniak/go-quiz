@@ -1,6 +1,5 @@
 .logo {
   font-family: Majorant, sans-serif;
-  height: 3rem;
   color: #fff;
 
   span {
@@ -10,5 +9,10 @@
     position: relative;
     top: -1.7rem;
     left: -0.8rem;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
 }

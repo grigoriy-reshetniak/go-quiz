@@ -1,8 +1,8 @@
 import { ChangeEvent, useState } from 'react';
 import { AnsweredQuestion } from './types.ts';
-import { Option } from './components/Option';
 import type { Question } from './types.ts';
 import questions from '../data/mockData.json';
+import { Option } from './components/Option';
 import { CodePreview } from './components/CodePreview';
 import { Footer } from './components/Footer';
 import { Disclaimer } from './components/Disclaimer';

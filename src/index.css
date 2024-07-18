@@ -27,7 +27,7 @@
   display: flex;
   flex-direction: column;
 
-  color: #FFFFFFDD;
+  color: rgba(255, 255, 255, 0.95);
   background-color: #007d9c;
 
   font-synthesis: none;
@@ -47,7 +47,7 @@ button {
   background-color: #253443;
   border: 3px solid #253443;
   border-radius: 20px;
-  color: rgba(255, 255, 255, 0.87);
+  color: rgba(255, 255, 255, 0.95);
   cursor: pointer;
   transition: background-color 0.2s, border-color 0.2s;
   margin: 0.25rem 0 0.75rem 0;
@@ -69,7 +69,7 @@ button {
   }
 
   &:active {
-    border-color: rgba(255, 255, 255, 0.87);
+    border-color: rgba(255, 255, 255, 0.95);
   }
 }
 
@@ -99,5 +99,6 @@ header {
 
   .logo {
     cursor: pointer;
+    height: 3rem;
   }
 }

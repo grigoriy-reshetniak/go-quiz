@@ -20,7 +20,7 @@
   }
 
   &:active {
-    border-color: rgba(255, 255, 255, 0.87);
+    border-color: rgba(255, 255, 255, 0.95);
   }
 
   input {
@@ -43,7 +43,7 @@
       top: 0;
       width: 1.5rem;
       height: 1.5rem;
-      border: 1px solid rgba(255, 255, 255, 0.87);
+      border: 1px solid rgba(255, 255, 255, 0.95);
       border-radius: 4px;
     }
 
