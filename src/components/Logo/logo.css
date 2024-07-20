@@ -1,6 +1,6 @@
 .logo {
-  font-family: Majorant, sans-serif;
-  color: #fff;
+  font-family: var(--header-font);
+  color: var(--white);
 
   span {
     font-size: 2rem;

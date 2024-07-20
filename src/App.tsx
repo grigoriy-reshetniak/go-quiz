@@ -8,6 +8,7 @@ import { Footer } from './components/Footer';
 import { Disclaimer } from './components/Disclaimer';
 import { Logo } from './components/Logo';
 import { Timer } from './components/Timer';
+import { Progress } from './components/Progress';
 
 const quiz = questions as Question[];
 
@@ -57,6 +58,7 @@ export const App = () => {
         <>
           <header>
             <Logo handleReset={handleReset}/>
+            <Progress progress={questionIndex} total={quiz.length}/>
             <Timer handleFinish={handleFinish}/>
           </header>
           <main>

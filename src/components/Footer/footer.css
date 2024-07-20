@@ -6,17 +6,17 @@ footer {
   padding: 0 2rem;
   height: 5.05rem;
 
-  background-color: #253443;
-  border-top: 1px solid #253443;
+  background-color: var(--dark-blue);
+  border-top: 1px solid var(--dark-blue);
 
   font-weight: 500;
   line-height: 1.5;
 
   a {
     text-decoration: none;
-    color: rgba(255, 255, 255, 0.95);
+    color: var(--white);
 
-    transition: color 0.3s;
+    transition: var(--transition);
 
     &:hover {
       color: #17d0fa;
@@ -48,7 +48,7 @@ footer {
 
     img {
       margin-right: 0.5rem;
-      transition: filter 0.3s ease-out;
+      transition: filter 0.2s ease-out;
     }
 
     &:hover {

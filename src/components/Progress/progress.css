@@ -1,0 +1,57 @@
+.progress-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 54%;
+  color: rgb(37, 52, 67);
+  font-family: "Majorant", sans-serif;
+}
+
+.line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: var(--blue-gray);
+  z-index: 1;
+}
+
+.circles-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 2;
+}
+
+.circle {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 2px solid var(--blue-gray);
+  background-color: var(--white);
+  text-align: center;
+  line-height: 2rem;
+}
+
+.completed {
+  background-color: yellow;
+  animation: pulse 0.6s ease;
+}
+
+.current {
+  border-color: var(--dark-blue);
+  transform: scale(1.2);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1.4);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

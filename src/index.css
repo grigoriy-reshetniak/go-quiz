@@ -1,9 +1,11 @@
+@import url(./variables.css);
 @import url(./components/Option/option.css);
 @import url(./components/CodePreview/code-preview.css);
 @import url(./components/Footer/footer.css);
 @import url(./components/Disclaimer/disclaimer.css);
 @import url(./components/Logo/logo.css);
 @import url(./components/Timer/timer.css);
+@import url(./components/Progress/progress.css);
 
 @font-face {
   font-family: 'Majorant';
@@ -20,15 +22,12 @@
 }
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Inter, Avenir, Helvetica, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  display: flex;
-  flex-direction: column;
-
-  color: rgba(255, 255, 255, 0.95);
-  background-color: #007d9c;
+  color: var(--white);
+  background-color: var(--blue);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -47,9 +46,9 @@ button {
   background-color: #253443;
   border: 3px solid #253443;
   border-radius: 20px;
-  color: rgba(255, 255, 255, 0.95);
+  color: var(--white);
   cursor: pointer;
-  transition: background-color 0.2s, border-color 0.2s;
+  transition: var(--transition);
   margin: 0.25rem 0 0.75rem 0;
 
   &:disabled {
@@ -81,7 +80,7 @@ main {
 }
 
 .quiz {
-  border: 2px solid rgba(37, 52, 67, 0.51);
+  border: 2px solid var(--blue-gray);
   width: 50%;
   margin: 0.5rem 0;
   padding: 0 1.5rem 1.5rem 1.5rem;
@@ -96,9 +95,10 @@ main {
 header {
   margin: 1rem 1rem 0 1rem;
   display: flex;
+  justify-content: space-between;
 
   .logo {
-    cursor: pointer;
     height: 3rem;
+    cursor: pointer;
   }
 }

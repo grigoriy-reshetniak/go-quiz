@@ -4,7 +4,7 @@
   border-radius: 1rem;
 
   code {
-    font-family: "Go", monospace;
+    font-family: var(--code-font);
   }
 }
 

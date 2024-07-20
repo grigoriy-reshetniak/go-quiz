@@ -1,7 +1,7 @@
 [
   {
     "id": "1",
-    "questionText": "What's the output?",
+    "questionText": "What's the output? ",
     "questionCode": "package main\n\nimport \"fmt\"\n\n// fib returns a function that returns\n// successive Fibonacci numbers.\nfunc fib() func() int {\n\ta, b := 0, 1\n\treturn func() int {\n\t\ta, b = b, a+b\n\t\treturn a\n\t}\n}\n\nfunc main() {\n\tf := fib()\n\t// Function calls are evaluated left-to-right.\n\tfmt.Println(f(), f(), f(), f(), f())\n}",
     "tags": ["Go"],
     "answers": [
@@ -128,6 +128,188 @@
   },
   {
     "id": "7",
+    "questionText": "Is following code valid?",
+    "answers": [
+      {
+        "id": "1",
+        "answerText": "Yes"
+      },
+      {
+        "id": "2",
+        "answerText": "No"
+      }
+    ]
+  },
+  {
+    "id": "8",
+    "questionText": "Is following code valid?",
+    "answers": [
+      {
+        "id": "1",
+        "answerText": "Yes"
+      },
+      {
+        "id": "2",
+        "answerText": "No"
+      }
+    ]
+  },
+  {
+    "id": "9",
+    "questionText": "Is following code valid?",
+    "answers": [
+      {
+        "id": "1",
+        "answerText": "Yes"
+      },
+      {
+        "id": "2",
+        "answerText": "No"
+      }
+    ]
+  },
+  {
+    "id": "10",
+    "questionText": "Is following code valid?",
+    "answers": [
+      {
+        "id": "1",
+        "answerText": "Yes"
+      },
+      {
+        "id": "2",
+        "answerText": "No"
+      }
+    ]
+  },
+  {
+    "id": "11",
+    "questionText": "Is following code valid?",
+    "answers": [
+      {
+        "id": "1",
+        "answerText": "Yes"
+      },
+      {
+        "id": "2",
+        "answerText": "No"
+      }
+    ]
+  },
+  {
+    "id": "12",
+    "questionText": "Is following code valid?",
+    "answers": [
+      {
+        "id": "1",
+        "answerText": "Yes"
+      },
+      {
+        "id": "2",
+        "answerText": "No"
+      }
+    ]
+  },
+  {
+    "id": "13",
+    "questionText": "Is following code valid?",
+    "answers": [
+      {
+        "id": "1",
+        "answerText": "Yes"
+      },
+      {
+        "id": "2",
+        "answerText": "No"
+      }
+    ]
+  },
+  {
+    "id": "14",
+    "questionText": "Is following code valid?",
+    "answers": [
+      {
+        "id": "1",
+        "answerText": "Yes"
+      },
+      {
+        "id": "2",
+        "answerText": "No"
+      }
+    ]
+  },
+  {
+    "id": "15",
+    "questionText": "Is following code valid?",
+    "answers": [
+      {
+        "id": "1",
+        "answerText": "Yes"
+      },
+      {
+        "id": "2",
+        "answerText": "No"
+      }
+    ]
+  },
+  {
+    "id": "16",
+    "questionText": "Is following code valid?",
+    "answers": [
+      {
+        "id": "1",
+        "answerText": "Yes"
+      },
+      {
+        "id": "2",
+        "answerText": "No"
+      }
+    ]
+  },
+  {
+    "id": "17",
+    "questionText": "Is following code valid?",
+    "answers": [
+      {
+        "id": "1",
+        "answerText": "Yes"
+      },
+      {
+        "id": "2",
+        "answerText": "No"
+      }
+    ]
+  },
+  {
+    "id": "18",
+    "questionText": "Is following code valid?",
+    "answers": [
+      {
+        "id": "1",
+        "answerText": "Yes"
+      },
+      {
+        "id": "2",
+        "answerText": "No"
+      }
+    ]
+  },
+  {
+    "id": "19",
+    "questionText": "Is following code valid?",
+    "answers": [
+      {
+        "id": "1",
+        "answerText": "Yes"
+      },
+      {
+        "id": "2",
+        "answerText": "No"
+      }
+    ]
+  },
+  {
+    "id": "20",
     "questionText": "Is following code valid?",
     "answers": [
       {
