@@ -11,6 +11,7 @@ export type Answer = {
     id: string,
     answerText: string,
     isCode: boolean,
+    isCorrect: boolean,
 };
 
 export type AnsweredQuestion = {

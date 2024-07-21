@@ -3,13 +3,13 @@ import type { Answer } from '../../types.ts';
 
 interface AnswerProps {
   answer: Answer;
-  selectAnswer: (e: ChangeEvent<HTMLInputElement>) => void;
-  isSelected: boolean;
+  selectAnswer?: (e: ChangeEvent<HTMLInputElement>) => void;
   checked: boolean;
+  isCorrect?: boolean;
 }
 
-export const Option = ({ answer, isSelected, selectAnswer, checked }: AnswerProps) => {
-  const answerClass = `answer ${isSelected ? 'selected' : ''}`;
+export const Option = ({ answer, selectAnswer, checked, isCorrect }: AnswerProps) => {
+  const answerClass = `answer ${checked ? 'checked' : ''}`;
 
   return (
     <label className={answerClass}>
@@ -19,6 +19,7 @@ export const Option = ({ answer, isSelected, selectAnswer, checked }: AnswerProp
         value={answer.id}
         onChange={selectAnswer}
         checked={checked}
+        disabled={isCorrect !== undefined}
       />
       <span className="checkmark"/>
       <span className="answer-text">

@@ -8,22 +8,26 @@
       {
         "id": "1",
         "answerText": "package main",
-        "isCode": true
+        "isCode": true,
+        "isCorrect": true
       },
       {
         "id": "2",
         "answerText": "package main\nimport\nimport\nimport\nimport",
-        "isCode": true
+        "isCode": true,
+        "isCorrect": false
       },
       {
         "id": "3",
         "answerText": "package main",
-        "isCode": false
+        "isCode": false,
+        "isCorrect": false
       },
       {
         "id": "4",
         "answerText": "package main\nimport\nimport\nimport\nimport",
-        "isCode": true
+        "isCode": true,
+        "isCorrect": false
       }
     ]
   },
@@ -35,290 +39,18 @@
     "answers": [
       {
         "id": "1",
-        "answerText": "1"
+        "answerText": "1",
+        "isCorrect": false
       },
       {
         "id": "2",
-        "answerText": "Panic"
+        "answerText": "Panic",
+        "isCorrect": true
       },
       {
         "id": "3",
-        "answerText": "Not valid"
-      }
-    ]
-  },
-  {
-    "id": "3",
-    "questionText": "Is this following statement true?",
-    "tags": ["Go"],
-    "answers": [
-      {
-        "id": "1",
-        "answerText": "true"
-      },
-      {
-        "id": "2",
-        "answerText": "false"
-      }
-    ]
-  },
-  {
-    "id": "4",
-    "questionText": "What's the output?",
-    "answers": [
-      {
-        "id": "1",
-        "answerText": "Panic"
-      },
-      {
-        "id": "2",
-        "answerText": "Not panic"
-      },
-      {
-        "id": "3",
-        "answerText": "4"
-      }
-    ]
-  },
-  {
-    "id": "5",
-    "questionText": "What's the output?",
-    "questionCode": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc main() {\n\t\n}",
-    "answers": [
-      {
-        "id": "1",
-        "answerText": "1"
-      },
-      {
-        "id": "2",
-        "answerText": "2",
-        "answersCode": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc main() {\n\t\n}"
-      },
-      {
-        "id": "3",
-        "answerText": "3"
-      },
-      {
-        "id": "4",
-        "answerText": "4"
-      }
-    ]
-  },
-  {
-    "id": "6",
-    "questionText": "What correct way declare array?",
-    "answers": [
-      {
-        "id": "1",
-        "answerText": "Like this"
-      },
-      {
-        "id": "2",
-        "answerCode": "Array = []"
-      },
-      {
-        "id": "3",
-        "answerCode": "Array = {}"
-      },
-      {
-        "id": "4",
-        "answerCode": "Struct Array{}"
-      }
-    ]
-  },
-  {
-    "id": "7",
-    "questionText": "Is following code valid?",
-    "answers": [
-      {
-        "id": "1",
-        "answerText": "Yes"
-      },
-      {
-        "id": "2",
-        "answerText": "No"
-      }
-    ]
-  },
-  {
-    "id": "8",
-    "questionText": "Is following code valid?",
-    "answers": [
-      {
-        "id": "1",
-        "answerText": "Yes"
-      },
-      {
-        "id": "2",
-        "answerText": "No"
-      }
-    ]
-  },
-  {
-    "id": "9",
-    "questionText": "Is following code valid?",
-    "answers": [
-      {
-        "id": "1",
-        "answerText": "Yes"
-      },
-      {
-        "id": "2",
-        "answerText": "No"
-      }
-    ]
-  },
-  {
-    "id": "10",
-    "questionText": "Is following code valid?",
-    "answers": [
-      {
-        "id": "1",
-        "answerText": "Yes"
-      },
-      {
-        "id": "2",
-        "answerText": "No"
-      }
-    ]
-  },
-  {
-    "id": "11",
-    "questionText": "Is following code valid?",
-    "answers": [
-      {
-        "id": "1",
-        "answerText": "Yes"
-      },
-      {
-        "id": "2",
-        "answerText": "No"
-      }
-    ]
-  },
-  {
-    "id": "12",
-    "questionText": "Is following code valid?",
-    "answers": [
-      {
-        "id": "1",
-        "answerText": "Yes"
-      },
-      {
-        "id": "2",
-        "answerText": "No"
-      }
-    ]
-  },
-  {
-    "id": "13",
-    "questionText": "Is following code valid?",
-    "answers": [
-      {
-        "id": "1",
-        "answerText": "Yes"
-      },
-      {
-        "id": "2",
-        "answerText": "No"
-      }
-    ]
-  },
-  {
-    "id": "14",
-    "questionText": "Is following code valid?",
-    "answers": [
-      {
-        "id": "1",
-        "answerText": "Yes"
-      },
-      {
-        "id": "2",
-        "answerText": "No"
-      }
-    ]
-  },
-  {
-    "id": "15",
-    "questionText": "Is following code valid?",
-    "answers": [
-      {
-        "id": "1",
-        "answerText": "Yes"
-      },
-      {
-        "id": "2",
-        "answerText": "No"
-      }
-    ]
-  },
-  {
-    "id": "16",
-    "questionText": "Is following code valid?",
-    "answers": [
-      {
-        "id": "1",
-        "answerText": "Yes"
-      },
-      {
-        "id": "2",
-        "answerText": "No"
-      }
-    ]
-  },
-  {
-    "id": "17",
-    "questionText": "Is following code valid?",
-    "answers": [
-      {
-        "id": "1",
-        "answerText": "Yes"
-      },
-      {
-        "id": "2",
-        "answerText": "No"
-      }
-    ]
-  },
-  {
-    "id": "18",
-    "questionText": "Is following code valid?",
-    "answers": [
-      {
-        "id": "1",
-        "answerText": "Yes"
-      },
-      {
-        "id": "2",
-        "answerText": "No"
-      }
-    ]
-  },
-  {
-    "id": "19",
-    "questionText": "Is following code valid?",
-    "answers": [
-      {
-        "id": "1",
-        "answerText": "Yes"
-      },
-      {
-        "id": "2",
-        "answerText": "No"
-      }
-    ]
-  },
-  {
-    "id": "20",
-    "questionText": "Is following code valid?",
-    "answers": [
-      {
-        "id": "1",
-        "answerText": "Yes"
-      },
-      {
-        "id": "2",
-        "answerText": "No"
+        "answerText": "Not valid",
+        "isCorrect": false
       }
     ]
   }

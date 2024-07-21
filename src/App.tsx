@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 import { AnsweredQuestion } from './types.ts';
 import type { Question } from './types.ts';
 import questions from '../data/mockData.json';
@@ -9,14 +9,22 @@ import { Disclaimer } from './components/Disclaimer';
 import { Logo } from './components/Logo';
 import { Timer } from './components/Timer';
 import { Progress } from './components/Progress';
+import { Results } from './components/Results';
 
 const quiz = questions as Question[];
 
 export const App = () => {
   const [startQuiz, setStartQuiz] = useState(false);
+  const [finishQuiz, setFinishQuiz] = useState(false);
   const [questionIndex, setQuestionIndex] = useState(0);
   const [answeredQuestions, setAnsweredQuestions] = useState<AnsweredQuestion[]>([]);
   const [selectedAnswers, setSelectedAnswers] = useState<string[]>([]);
+
+  useEffect(() => {
+    if (finishQuiz) {
+      console.log(answeredQuestions);
+    }
+  }, [finishQuiz, answeredQuestions]);
 
   const handleAnswerChange = (e: ChangeEvent<HTMLInputElement>) => {
     const selectedAnswerId = e.target.value;
@@ -37,10 +45,14 @@ export const App = () => {
     setAnsweredQuestions([...answeredQuestions, newAnsweredQuestion]);
     setQuestionIndex(questionIndex + 1);
     setSelectedAnswers([]);
+
+    if (questionIndex === quiz.length - 1) {
+      setFinishQuiz(true);
+    }
   };
 
   const handleFinish = () => {
-    console.log(answeredQuestions);
+    setFinishQuiz(true);
   }
 
   const handleReset = () => {
@@ -49,6 +61,7 @@ export const App = () => {
       setAnsweredQuestions([]);
       setSelectedAnswers([]);
       setStartQuiz(false);
+      setFinishQuiz(false);
     }
   }
 
@@ -59,46 +72,42 @@ export const App = () => {
           <header>
             <Logo handleReset={handleReset}/>
             <Progress progress={questionIndex} total={quiz.length}/>
-            <Timer handleFinish={handleFinish}/>
+            {!finishQuiz && <Timer handleFinish={handleFinish}/>}
           </header>
           <main>
-            <div className="quiz">
-              <h2>{quiz[questionIndex].questionText}</h2>
-              {quiz[questionIndex].questionCode &&
-                  <CodePreview code={quiz[questionIndex].questionCode}/>
-              }
-              {quiz[questionIndex].answers.map((answer) => (
-                <Option
-                  answer={answer}
-                  key={answer.id}
-                  selectAnswer={handleAnswerChange}
-                  isSelected={selectedAnswers.includes(answer.id)}
-                  checked={selectedAnswers.includes(answer.id)}
-                />
-              ))}
-            </div>
-
-            {questionIndex === quiz.length - 1 ? (
-              <button
-                onClick={handleFinish}
-                disabled={selectedAnswers.length === 0}
-              >
-                Finish
-              </button>
-            ) : (
-              <button
-                onClick={handleAnswer}
-                disabled={selectedAnswers.length === 0}
-              >
-                Next
-              </button>
+            {finishQuiz ? (
+              <Results answeredQuestions={answeredQuestions} questions={quiz} />
+              ) : (
+              <>
+                <div className="quiz">
+                  <h2>{quiz[questionIndex].questionText}</h2>
+                  {quiz[questionIndex].questionCode &&
+                      <CodePreview code={quiz[questionIndex].questionCode}/>
+                  }
+                  {quiz[questionIndex].answers.map((answer) => (
+                    <Option
+                      answer={answer}
+                      key={answer.id}
+                      selectAnswer={handleAnswerChange}
+                      checked={selectedAnswers.includes(answer.id)}
+                    />
+                  ))}
+                </div>
+                <button
+                  onClick={handleAnswer}
+                  disabled={selectedAnswers.length === 0}
+                >
+                  {questionIndex === quiz.length - 1 ? 'Finish' : 'Next'}
+                </button>
+              </>
             )}
           </main>
           <Footer/>
         </>
       ) : (
-        <Disclaimer startQuiz={() => setStartQuiz(true)} />
+        <Disclaimer startQuiz={() => setStartQuiz(true)}/>
       )}
+
     </>
   )
 }

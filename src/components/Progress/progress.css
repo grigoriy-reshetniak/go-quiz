@@ -5,6 +5,11 @@
   width: 54%;
   color: rgb(37, 52, 67);
   font-family: "Majorant", sans-serif;
+
+  h1 {
+    margin-bottom: 1rem;
+    color: var(--white);
+  }
 }
 
 .line {

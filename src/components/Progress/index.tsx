@@ -27,9 +27,9 @@ export const Progress = ({ progress, total }: ProgressProps) => {
           </div>
         </>
       ) : (
-        <h3>
-          Quiz finished!
-        </h3>
+        <h1>
+          Quiz finished
+        </h1>
       )}
     </div>
   );
