@@ -16,6 +16,7 @@ const quiz = questions as Question[];
 export const App = () => {
   const [startQuiz, setStartQuiz] = useState(false);
   const [finishQuiz, setFinishQuiz] = useState(false);
+  const [blur, setBlur] = useState(false);
   const [questionIndex, setQuestionIndex] = useState(0);
   const [answeredQuestions, setAnsweredQuestions] = useState<AnsweredQuestion[]>([]);
   const [selectedAnswers, setSelectedAnswers] = useState<string[]>([]);
@@ -56,14 +57,20 @@ export const App = () => {
   }
 
   const handleReset = () => {
-    if (confirm('Are you sure you want to reset the quiz? Your progress will be lost.')) {
-      setQuestionIndex(0);
-      setAnsweredQuestions([]);
-      setSelectedAnswers([]);
-      setStartQuiz(false);
-      setFinishQuiz(false);
-    }
-  }
+    setBlur(true);
+
+    setTimeout(() => {
+      if (confirm('Are you sure you want to reset the quiz? Your progress will be lost.')) {
+        setQuestionIndex(0);
+        setAnsweredQuestions([]);
+        setSelectedAnswers([]);
+        setStartQuiz(false);
+        setFinishQuiz(false);
+      }
+
+      setBlur(false);
+    }, 0);
+  };
 
   return (
     <>
@@ -74,13 +81,13 @@ export const App = () => {
             <Progress progress={questionIndex} total={quiz.length}/>
             {!finishQuiz && <Timer handleFinish={handleFinish}/>}
           </header>
-          <main>
+          <main className={`${blur ? 'blur' : ''}`}>
             {finishQuiz ? (
               <Results answeredQuestions={answeredQuestions} questions={quiz} />
               ) : (
               <>
                 <div className="quiz">
-                  <h2>{quiz[questionIndex].questionText}</h2>
+                  <h2 dangerouslySetInnerHTML={{ __html: quiz[questionIndex].questionText }}></h2>
                   {quiz[questionIndex].questionCode &&
                       <CodePreview code={quiz[questionIndex].questionCode}/>
                   }

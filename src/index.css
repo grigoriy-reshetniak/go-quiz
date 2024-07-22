@@ -81,6 +81,10 @@ main {
   justify-content: center;
 }
 
+.blur {
+  filter: blur(8px);
+}
+
 .quiz {
   border: 2px solid var(--blue-gray);
   width: 50%;

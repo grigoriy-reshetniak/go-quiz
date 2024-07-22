@@ -23,7 +23,7 @@ export const Option = ({ answer, selectAnswer, checked, isCorrect }: AnswerProps
       />
       <span className="checkmark"/>
       <span className="answer-text">
-        {answer.isCode ? <code>{answer.answerText}</code> : answer.answerText}
+        {answer.isCode ? <code dangerouslySetInnerHTML={{ __html: answer.answerText }}></code> : answer.answerText}
       </span>
     </label>
   );
