@@ -1,6 +1,6 @@
 export type Question = {
     id: string,
-    questionText: string,
+    text: string,
     questionCode?: string,
     answers: Answer[],
     points: number,

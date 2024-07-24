@@ -20,4 +20,8 @@
       color: #551A8B;
     }
   }
+
+  p {
+    margin: 0.75rem 0;
+  }
 }

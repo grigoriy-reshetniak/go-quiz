@@ -1,9 +1,12 @@
 :root {
   --blue: #007d9c;
+  --blue2: #035b71;
   --dark-blue: #253443;
   --white: rgba(255, 255, 255, 0.95);
   --blue-gray: rgba(37, 52, 67, 0.51);
-  --font: Inter, Avenir, Helvetica, sans-serif;
+  --gray: #78787e;
+  --yellow: rgb(250, 250, 126);
+  --font: Helvetica, sans-serif;
   --code-font: Go, sans-serif;
   --header-font: Majorant, sans-serif;
   --transition: background-color 0.2s, border-color 0.2s;

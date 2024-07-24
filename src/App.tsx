@@ -87,10 +87,15 @@ export const App = () => {
               ) : (
               <>
                 <div className="quiz">
-                  <h2 dangerouslySetInnerHTML={{ __html: quiz[questionIndex].questionText }}></h2>
+                  <h2 dangerouslySetInnerHTML={{ __html: quiz[questionIndex].text }}></h2>
                   {quiz[questionIndex].questionCode &&
                       <CodePreview code={quiz[questionIndex].questionCode}/>
                   }
+                  <div className="tags">
+                    {quiz[questionIndex].tags.map ((tag) => (
+                      <span key={tag}>{tag}</span>
+                    ))}
+                  </div>
                   {quiz[questionIndex].answers.map((answer) => (
                     <Option
                       answer={answer}

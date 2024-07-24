@@ -1,7 +1,7 @@
 [
   {
     "id": "1",
-    "questionText": "What's the output? ",
+    "text": "What's the output? ",
     "questionCode": "package main\n\nimport \"fmt\"\n\n// fib returns a function that returns\n// successive Fibonacci numbers.\nfunc fib() func() int {\n\ta, b := 0, 1\n\treturn func() int {\n\t\ta, b = b, a+b\n\t\treturn a\n\t}\n}\n\nfunc main() {\n\tf := fib()\n\t// Function calls are evaluated left-to-right.\n\tfmt.Println(f(), f(), f(), f(), f())\n}",
     "tags": ["Go"],
     "points": 1,
@@ -34,7 +34,7 @@
   },
   {
     "id": "2",
-    "questionText": "What's the output?",
+    "text": "What's the output?",
     "questionCode": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc main() {\n\t\n}",
     "tags": ["Go"],
     "points": 1,
@@ -58,7 +58,7 @@
   },
   {
     "id": "3",
-    "questionText": "Is this following statement true?",
+    "text": "Is this following statement true?",
     "tags": ["Go"],
     "points": 1,
     "answers": [
@@ -74,7 +74,8 @@
   },
   {
     "id": "4",
-    "questionText": "What's the output?",
+    "text": "What's the output?",
+    "tags": ["Go"],
     "points": 1,
     "answers": [
       {
@@ -93,8 +94,9 @@
   },
   {
     "id": "5",
-    "questionText": "What's the output?",
+    "text": "What's the output?",
     "questionCode": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc main() {\n\t\n}",
+    "tags": ["Go"],
     "points": 1,
     "answers": [
       {
@@ -118,7 +120,7 @@
   },
   {
     "id": 6,
-    "questionText": "Choose the code that will print the following lines:  <br /> Hello! <br />Welcome to \"GoQuiz\"!",
+    "text": "Choose the code that will print the following lines:  <br /> Hello! <br />Welcome to \"GoQuiz\"!",
     "questionCode": "",
     "isMultipleChoice": true,
     "isVariative": false,
@@ -153,7 +155,7 @@
   },
   {
     "id": "7",
-    "questionText": "Is following code valid?",
+    "text": "Is following code valid?",
     "answers": [
       {
         "id": "1",
@@ -167,7 +169,7 @@
   },
   {
     "id": "8",
-    "questionText": "Is following code valid?",
+    "text": "Is following code valid?",
     "answers": [
       {
         "id": "1",
@@ -181,7 +183,7 @@
   },
   {
     "id": "9",
-    "questionText": "Is following code valid?",
+    "text": "Is following code valid?",
     "answers": [
       {
         "id": "1",
@@ -195,7 +197,7 @@
   },
   {
     "id": "10",
-    "questionText": "Is following code valid?",
+    "text": "Is following code valid?",
     "answers": [
       {
         "id": "1",
@@ -209,7 +211,7 @@
   },
   {
     "id": "11",
-    "questionText": "Is following code valid?",
+    "text": "Is following code valid?",
     "answers": [
       {
         "id": "1",
@@ -223,7 +225,7 @@
   },
   {
     "id": "12",
-    "questionText": "Is following code valid?",
+    "text": "Is following code valid?",
     "answers": [
       {
         "id": "1",
@@ -237,7 +239,7 @@
   },
   {
     "id": "13",
-    "questionText": "Is following code valid?",
+    "text": "Is following code valid?",
     "answers": [
       {
         "id": "1",
@@ -251,7 +253,7 @@
   },
   {
     "id": "14",
-    "questionText": "Is following code valid?",
+    "text": "Is following code valid?",
     "answers": [
       {
         "id": "1",
@@ -265,7 +267,7 @@
   },
   {
     "id": "15",
-    "questionText": "Is following code valid?",
+    "text": "Is following code valid?",
     "answers": [
       {
         "id": "1",
@@ -279,7 +281,7 @@
   },
   {
     "id": "16",
-    "questionText": "Is following code valid?",
+    "text": "Is following code valid?",
     "answers": [
       {
         "id": "1",
@@ -293,7 +295,7 @@
   },
   {
     "id": "17",
-    "questionText": "Is following code valid?",
+    "text": "Is following code valid?",
     "answers": [
       {
         "id": "1",
@@ -307,7 +309,7 @@
   },
   {
     "id": "18",
-    "questionText": "Is following code valid?",
+    "text": "Is following code valid?",
     "answers": [
       {
         "id": "1",
@@ -321,7 +323,7 @@
   },
   {
     "id": "19",
-    "questionText": "Is following code valid?",
+    "text": "Is following code valid?",
     "answers": [
       {
         "id": "1",
@@ -335,7 +337,7 @@
   },
   {
     "id": "20",
-    "questionText": "Is following code valid?",
+    "text": "Is following code valid?",
     "answers": [
       {
         "id": "1",

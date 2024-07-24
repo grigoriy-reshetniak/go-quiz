@@ -16,20 +16,18 @@ export const Results = ({ answeredQuestions, questions }: ResultsProps) => {
         const isCorrect = answeredQuestion.selectedAnswers.every((selectedAnswer) => correctAnswers?.includes(selectedAnswer));
         return (
           <div key={answeredQuestion.questionId} className={`question ${isCorrect ? 'correct' : 'incorrect'}`}>
-            <h3>{question?.questionText}</h3>
+            <h3>{question?.text}</h3>
             {question?.questionCode &&
                 <CodePreview code={question.questionCode}/>
             }
-            <ul>
-              {question?.answers.map((answer) => (
-                <Option
-                  answer={answer}
-                  key={answer.id}
-                  isCorrect={correctAnswers?.includes(answer.id)}
-                  checked={answeredQuestion.selectedAnswers.includes(answer.id)}
-                />
-              ))}
-            </ul>
+            {question?.answers.map((answer) => (
+              <Option
+                answer={answer}
+                key={answer.id}
+                isCorrect={correctAnswers?.includes(answer.id)}
+                checked={answeredQuestion.selectedAnswers.includes(answer.id)}
+              />
+            ))}
           </div>
         );
       })}

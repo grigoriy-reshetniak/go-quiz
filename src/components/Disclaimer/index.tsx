@@ -10,12 +10,15 @@ export const Disclaimer = ({ startQuiz }: { startQuiz: () => void }) => {
           <a href="https://github.com/KiteShi" target="_blank" rel="noopener noreferrer">
             Kateryna Azarenko
           </a> inspired by Jon Bodner's book,{' '}
-          <a href="https://www.oreilly.com/library/view/learning-go/9781492077206/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.oreilly.com/library/view/learning-go/9781492077206/" target="_blank"
+             rel="noopener noreferrer">
             <em>Learning Go</em>
           </a>.
         </p>
         <p>
-          The quiz consists of 20 questions and takes approximately 25 minutes to complete. If you start over, you might receive a different set of questions. Your progress will be saved in your browser's local storage, allowing you to continue later. By starting the quiz, you agree to this.
+          The quiz consists of 20 questions and takes 25 minutes to complete. If you start over, you might receive a
+          different set of questions. Your progress will be saved in your browser's local storage, allowing you to
+          continue later. By starting the quiz, you agree to this.
         </p>
         <p>
           While the design is <i>heavily inspired</i> by{' '}
