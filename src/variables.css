@@ -6,8 +6,10 @@
   --blue-gray: rgba(37, 52, 67, 0.51);
   --gray: #78787e;
   --yellow: rgb(250, 250, 126);
+  --black: rgb(51, 51, 51);
   --font: Helvetica, sans-serif;
   --code-font: Go, sans-serif;
   --header-font: Majorant, sans-serif;
+  --terminal-font: Code_page_437, monospace;
   --transition: background-color 0.2s, border-color 0.2s;
 }

@@ -2,6 +2,7 @@ export type Question = {
     id: string,
     text: string,
     code?: string,
+    output?: string,
     answers: Answer[],
     points: number,
     tags: string[],

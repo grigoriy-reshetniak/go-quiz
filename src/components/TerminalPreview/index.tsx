@@ -1,9 +1,5 @@
 import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
-// import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { gruvboxLight } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-import bash from 'react-syntax-highlighter/dist/esm/languages/hljs/bash';
-
-SyntaxHighlighter.registerLanguage('bash', bash);
+import { agate } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 interface CodePreviewProps {
   output: string;
@@ -11,10 +7,10 @@ interface CodePreviewProps {
 
 export const TerminalPreview = ({ output }: CodePreviewProps) => {
   return (
-    <div className="code-preview">
+    <div className="terminal-preview">
       <SyntaxHighlighter
-        language="bash"
-        style={gruvboxLight}
+        language="text"
+        style={agate}
         customStyle={{
           padding: '1rem',
           margin: 0,

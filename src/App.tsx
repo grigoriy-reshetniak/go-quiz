@@ -10,6 +10,7 @@ import { Logo } from './components/Logo';
 import { Timer } from './components/Timer';
 import { Progress } from './components/Progress';
 import { Results } from './components/Results';
+import { TerminalPreview } from './components/TerminalPreview';
 
 const quiz = questions as Question[];
 
@@ -90,6 +91,9 @@ export const App = () => {
                   <h2 dangerouslySetInnerHTML={{ __html: quiz[questionIndex].text }}></h2>
                   {quiz[questionIndex].code &&
                       <CodePreview code={quiz[questionIndex].code}/>
+                  }
+                  {quiz[questionIndex].output &&
+                      <TerminalPreview output={quiz[questionIndex].output}/>
                   }
                   <div className="tags">
                     {quiz[questionIndex].tags.map((tag) => (
