@@ -10,7 +10,6 @@
   cursor: pointer;
 
   &:hover {
-    /*border-color: rgb(255, 255, 182);*/
     border-color: var(--yellow);
   }
 
@@ -21,7 +20,6 @@
   input {
     position: absolute;
     opacity: 0;
-    cursor: pointer;
     height: 0;
     width: 0;
   }
@@ -31,17 +29,6 @@
     padding-left: 2.5rem;
     line-height: 1.5rem;
 
-    &:before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 1.5rem;
-      height: 1.5rem;
-      border: 1px solid var(--white);
-      border-radius: 4px;
-    }
-
     code {
       font-family: "Go", monospace;
       padding: .2rem .4rem;
@@ -50,7 +37,7 @@
     }
   }
 
-  input:checked + .checkmark {
+  input[type="checkbox"]:checked + .checkmark {
     visibility: visible;
   }
 
@@ -64,6 +51,32 @@
     border-width: 0 3px 3px 0;
     transform: rotate(45deg);
     visibility: hidden;
+  }
+
+  .checkmark + .answer-text::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 1px solid var(--white);
+    border-radius: 4px;
+  }
+
+  .radio {
+    position: relative;
+    height: 0.75rem;
+    width: 0.75rem;
+    top: -0.1rem;
+    left: 0.8rem;
+    border-radius: 50%;
+    background: var(--white);
+    border: 0.4rem solid var(--white);
+  }
+
+  input[type="radio"]:checked + .radio {
+    background: var(--dark-blue);
   }
 }
 

@@ -1,32 +1,27 @@
 [
   {
     "id": "1",
-    "text": "What's the output? ",
-    "questionCode": "package main\n\nimport \"fmt\"\n\n// fib returns a function that returns\n// successive Fibonacci numbers.\nfunc fib() func() int {\n\ta, b := 0, 1\n\treturn func() int {\n\t\ta, b = b, a+b\n\t\treturn a\n\t}\n}\n\nfunc main() {\n\tf := fib()\n\t// Function calls are evaluated left-to-right.\n\tfmt.Println(f(), f(), f(), f(), f())\n}",
-    "tags": ["Go"],
+    "text": "What code produces following output?",
+    "code": "Hello world!",
+    "tags": ["Terminal preview", "Radio button", "Code in answers"],
+    "isMultipleChoice": false,
     "points": 1,
     "answers": [
       {
         "id": "1",
-        "answerText": "package main",
+        "text": "package main",
         "isCode": true,
         "isCorrect": true
       },
       {
         "id": "2",
-        "answerText": "package main\nimport\nimport\nimport\nimport",
+        "text": "fmt.Println(\"Hello world!\")",
         "isCode": true,
         "isCorrect": false
       },
       {
-        "id": "3",
-        "answerText": "package main",
-        "isCode": false,
-        "isCorrect": false
-      },
-      {
         "id": "4",
-        "answerText": "package main\nimport\nimport\nimport\nimport",
+        "text": "this is not code at all",
         "isCode": true,
         "isCorrect": false
       }
@@ -35,23 +30,23 @@
   {
     "id": "2",
     "text": "What's the output?",
-    "questionCode": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc main() {\n\t\n}",
+    "code": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc main() {\n\t\n}",
     "tags": ["Go"],
     "points": 1,
     "answers": [
       {
         "id": "1",
-        "answerText": "1",
+        "text": "1",
         "isCorrect": false
       },
       {
         "id": "2",
-        "answerText": "Panic",
+        "text": "Panic",
         "isCorrect": true
       },
       {
         "id": "3",
-        "answerText": "Not valid",
+        "text": "Not valid",
         "isCorrect": false
       }
     ]
@@ -64,11 +59,11 @@
     "answers": [
       {
         "id": "1",
-        "answerText": "true"
+        "text": "true"
       },
       {
         "id": "2",
-        "answerText": "false"
+        "text": "false"
       }
     ]
   },
@@ -80,48 +75,48 @@
     "answers": [
       {
         "id": "1",
-        "answerText": "Panic"
+        "text": "Panic"
       },
       {
         "id": "2",
-        "answerText": "Not panic"
+        "text": "Not panic"
       },
       {
         "id": "3",
-        "answerText": "4"
+        "text": "4"
       }
     ]
   },
   {
     "id": "5",
     "text": "What's the output?",
-    "questionCode": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc main() {\n\t\n}",
+    "code": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc main() {\n\t\n}",
     "tags": ["Go"],
     "points": 1,
     "answers": [
       {
         "id": "1",
-        "answerText": "1"
+        "text": "1"
       },
       {
         "id": "2",
-        "answerText": "2",
+        "text": "2",
         "answersCode": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc main() {\n\t\n}"
       },
       {
         "id": "3",
-        "answerText": "3"
+        "text": "3"
       },
       {
         "id": "4",
-        "answerText": "4"
+        "text": "4"
       }
     ]
   },
   {
     "id": 6,
     "text": "Choose the code that will print the following lines:  <br /> Hello! <br />Welcome to \"GoQuiz\"!",
-    "questionCode": "",
+    "code": "",
     "isMultipleChoice": true,
     "isVariative": false,
     "tags": ["Primitive Types", "Strings"],
@@ -129,25 +124,25 @@
     "answers": [
       {
         "id": 0,
-        "answerText": "fmt.Println(\"Hello!\\nWelcome to \\\"GoQuiz\\\"!\")",
+        "text": "fmt.Println(\"Hello!\\nWelcome to \\\"GoQuiz\\\"!\")",
         "isCode": true,
         "isCorrect": true
       },
       {
         "id": 1,
-        "answerText": "fmt.Println(`Hello! <br />Welcome to \"GoQuiz\"!`)",
+        "text": "fmt.Println(`Hello! <br />Welcome to \"GoQuiz\"!`)",
         "isCode": true,
         "isCorrect": true
       },
       {
         "id": 2,
-        "answerText": "fmt.Println('Hello!\\nWelcome to \"GoQuiz\"!')",
+        "text": "fmt.Println('Hello!\\nWelcome to \"GoQuiz\"!')",
         "isCode": true,
         "isCorrect": false
       },
       {
         "id": 3,
-        "answerText": "fmt.Println(\"Hello!\\nWelcome to \"GoQuiz\"!\")",
+        "text": "fmt.Println(\"Hello!\\nWelcome to \"GoQuiz\"!\")",
         "isCode": true,
         "isCorrect": false
       }
@@ -159,11 +154,11 @@
     "answers": [
       {
         "id": "1",
-        "answerText": "Yes"
+        "text": "Yes"
       },
       {
         "id": "2",
-        "answerText": "No"
+        "text": "No"
       }
     ]
   },
@@ -173,11 +168,11 @@
     "answers": [
       {
         "id": "1",
-        "answerText": "Yes"
+        "text": "Yes"
       },
       {
         "id": "2",
-        "answerText": "No"
+        "text": "No"
       }
     ]
   },
@@ -187,11 +182,11 @@
     "answers": [
       {
         "id": "1",
-        "answerText": "Yes"
+        "text": "Yes"
       },
       {
         "id": "2",
-        "answerText": "No"
+        "text": "No"
       }
     ]
   },
@@ -201,11 +196,11 @@
     "answers": [
       {
         "id": "1",
-        "answerText": "Yes"
+        "text": "Yes"
       },
       {
         "id": "2",
-        "answerText": "No"
+        "text": "No"
       }
     ]
   },
@@ -215,11 +210,11 @@
     "answers": [
       {
         "id": "1",
-        "answerText": "Yes"
+        "text": "Yes"
       },
       {
         "id": "2",
-        "answerText": "No"
+        "text": "No"
       }
     ]
   },
@@ -229,11 +224,11 @@
     "answers": [
       {
         "id": "1",
-        "answerText": "Yes"
+        "text": "Yes"
       },
       {
         "id": "2",
-        "answerText": "No"
+        "text": "No"
       }
     ]
   },
@@ -243,11 +238,11 @@
     "answers": [
       {
         "id": "1",
-        "answerText": "Yes"
+        "text": "Yes"
       },
       {
         "id": "2",
-        "answerText": "No"
+        "text": "No"
       }
     ]
   },
@@ -257,11 +252,11 @@
     "answers": [
       {
         "id": "1",
-        "answerText": "Yes"
+        "text": "Yes"
       },
       {
         "id": "2",
-        "answerText": "No"
+        "text": "No"
       }
     ]
   },
@@ -271,11 +266,11 @@
     "answers": [
       {
         "id": "1",
-        "answerText": "Yes"
+        "text": "Yes"
       },
       {
         "id": "2",
-        "answerText": "No"
+        "text": "No"
       }
     ]
   },
@@ -285,11 +280,11 @@
     "answers": [
       {
         "id": "1",
-        "answerText": "Yes"
+        "text": "Yes"
       },
       {
         "id": "2",
-        "answerText": "No"
+        "text": "No"
       }
     ]
   },
@@ -299,11 +294,11 @@
     "answers": [
       {
         "id": "1",
-        "answerText": "Yes"
+        "text": "Yes"
       },
       {
         "id": "2",
-        "answerText": "No"
+        "text": "No"
       }
     ]
   },
@@ -313,11 +308,11 @@
     "answers": [
       {
         "id": "1",
-        "answerText": "Yes"
+        "text": "Yes"
       },
       {
         "id": "2",
-        "answerText": "No"
+        "text": "No"
       }
     ]
   },
@@ -327,11 +322,11 @@
     "answers": [
       {
         "id": "1",
-        "answerText": "Yes"
+        "text": "Yes"
       },
       {
         "id": "2",
-        "answerText": "No"
+        "text": "No"
       }
     ]
   },
@@ -341,11 +336,11 @@
     "answers": [
       {
         "id": "1",
-        "answerText": "Yes"
+        "text": "Yes"
       },
       {
         "id": "2",
-        "answerText": "No"
+        "text": "No"
       }
     ]
   }

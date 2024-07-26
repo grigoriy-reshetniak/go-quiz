@@ -27,21 +27,21 @@ export const App = () => {
     }
   }, [finishQuiz, answeredQuestions]);
 
-  const handleAnswerChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleAnswer = (e: ChangeEvent<HTMLInputElement>) => {
     const selectedAnswerId = e.target.value;
 
-    if (selectedAnswers.includes(selectedAnswerId)) {
-      setSelectedAnswers(selectedAnswers.filter((answerId) => answerId !== selectedAnswerId));
+    if (!quiz[questionIndex].isMultipleChoice) {
+      setSelectedAnswers([selectedAnswerId]);
     } else {
-      if (quiz[questionIndex].answers.length === 2) {
-        setSelectedAnswers([selectedAnswerId]);
+      if (selectedAnswers.includes(selectedAnswerId)) {
+        setSelectedAnswers(selectedAnswers.filter((answerId) => answerId !== selectedAnswerId));
       } else {
         setSelectedAnswers([...selectedAnswers, selectedAnswerId]);
       }
     }
   };
 
-  const handleAnswer = () => {
+  const handleNext = () => {
     const newAnsweredQuestion = { questionId: quiz[questionIndex].id, selectedAnswers } as AnsweredQuestion;
     setAnsweredQuestions([...answeredQuestions, newAnsweredQuestion]);
     setQuestionIndex(questionIndex + 1);
@@ -83,16 +83,16 @@ export const App = () => {
           </header>
           <main className={`${blur ? 'blur' : ''}`}>
             {finishQuiz ? (
-              <Results answeredQuestions={answeredQuestions} questions={quiz} />
-              ) : (
+              <Results answeredQuestions={answeredQuestions} questions={quiz}/>
+            ) : (
               <>
                 <div className="quiz">
                   <h2 dangerouslySetInnerHTML={{ __html: quiz[questionIndex].text }}></h2>
-                  {quiz[questionIndex].questionCode &&
-                      <CodePreview code={quiz[questionIndex].questionCode}/>
+                  {quiz[questionIndex].code &&
+                      <CodePreview code={quiz[questionIndex].code}/>
                   }
                   <div className="tags">
-                    {quiz[questionIndex].tags.map ((tag) => (
+                    {quiz[questionIndex].tags.map((tag) => (
                       <span key={tag}>{tag}</span>
                     ))}
                   </div>
@@ -100,13 +100,14 @@ export const App = () => {
                     <Option
                       answer={answer}
                       key={answer.id}
-                      selectAnswer={handleAnswerChange}
+                      selectAnswer={handleAnswer}
                       checked={selectedAnswers.includes(answer.id)}
+                      type={quiz[questionIndex].isMultipleChoice ? 'checkbox' : 'radio'}
                     />
                   ))}
                 </div>
                 <button
-                  onClick={handleAnswer}
+                  onClick={handleNext}
                   disabled={selectedAnswers.length === 0}
                 >
                   {questionIndex === quiz.length - 1 ? 'Finish' : 'Next'}

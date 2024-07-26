@@ -1,15 +1,16 @@
 export type Question = {
     id: string,
     text: string,
-    questionCode?: string,
+    code?: string,
     answers: Answer[],
     points: number,
     tags: string[],
+    isMultipleChoice: boolean,
 };
 
 export type Answer = {
     id: string,
-    answerText: string,
+    text: string,
     isCode: boolean,
     isCorrect: boolean,
 };

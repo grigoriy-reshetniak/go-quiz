@@ -17,8 +17,8 @@ export const Results = ({ answeredQuestions, questions }: ResultsProps) => {
         return (
           <div key={answeredQuestion.questionId} className={`question ${isCorrect ? 'correct' : 'incorrect'}`}>
             <h3>{question?.text}</h3>
-            {question?.questionCode &&
-                <CodePreview code={question.questionCode}/>
+            {question?.code &&
+                <CodePreview code={question.code}/>
             }
             {question?.answers.map((answer) => (
               <Option
