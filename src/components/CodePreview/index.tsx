@@ -1,23 +1,25 @@
 import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
-// import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { nord } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { gruvboxLight } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { agate } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import go from 'react-syntax-highlighter/dist/esm/languages/hljs/go';
 
 SyntaxHighlighter.registerLanguage('go', go);
 
 interface CodePreviewProps {
   code: string;
+  type: 'code' | 'terminal';
 }
 
-export const CodePreview = ({ code }: CodePreviewProps) => {
+export const CodePreview = ({ code, type }: CodePreviewProps) => {
   return (
-    <div className="code-preview">
+    <div className={`${type === 'code' ? 'code-preview' : 'terminal-preview'}`}>
       <SyntaxHighlighter
-        language="go"
-        style={gruvboxLight}
-        showLineNumbers={true}
+        language={type === 'code' ? 'go' : 'text'}
+        style={type === 'code' ? nord : agate}
+        showLineNumbers={type === 'code'}
         customStyle={{
-          padding: '1rem',
+          padding: type === 'code' ? '0.5rem 0' : '0.5rem 1rem',
           margin: 0,
       }}
       >

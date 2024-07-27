@@ -26,3 +26,29 @@
 /*.code-preview::-webkit-scrollbar-thumb:hover {*/
 /*  background: #666;*/
 /*}*/
+
+.terminal-preview {
+  max-height: 4rem;
+  overflow-y: auto;
+
+  code {
+    font-family: var(--terminal-font);
+  }
+}
+
+.terminal-preview::-webkit-scrollbar {
+  width: 0.75rem;
+}
+
+.terminal-preview::-webkit-scrollbar-track {
+  background: var(--black);
+}
+
+.terminal-preview::-webkit-scrollbar-thumb {
+  background: var(--gray);
+}
+
+.terminal-preview::-webkit-scrollbar-thumb:hover {
+  background: var(--white);
+}
+

@@ -6,7 +6,6 @@
 @import url(./components/Logo/logo.css);
 @import url(./components/Timer/timer.css);
 @import url(./components/Progress/progress.css);
-@import url(./components/TerminalPreview/terminal.css);
 
 @font-face {
   font-family: 'Majorant';
