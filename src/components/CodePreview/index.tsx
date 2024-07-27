@@ -1,6 +1,5 @@
 import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { nord } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-import { gruvboxLight } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { agate } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import go from 'react-syntax-highlighter/dist/esm/languages/hljs/go';
 

@@ -1,31 +1,27 @@
 .code-preview {
-  max-height: 17rem;
+  max-height: 16rem;
   overflow-y: auto;
-  border-radius: 1rem;
 
   code {
     font-family: var(--code-font);
   }
 }
 
-/*.code-preview::-webkit-scrollbar {*/
-/*  width: 12px;*/
-/*  border-radius: 3px;*/
-/*}*/
+.code-preview::-webkit-scrollbar {
+  width: 0.75rem;
+}
 
-/*.code-preview::-webkit-scrollbar-track {*/
-/*  background: #000;*/
-/*  border-radius: 0 1rem 1rem 0;*/
-/*}*/
+.code-preview::-webkit-scrollbar-track {
+  background: rgb(46, 52, 64);
+}
 
-/*.code-preview::-webkit-scrollbar-thumb {*/
-/*  background: #555;*/
-/*  border-radius: 1rem;*/
-/*}*/
+.code-preview::-webkit-scrollbar-thumb {
+  background: #555;
+}
 
-/*.code-preview::-webkit-scrollbar-thumb:hover {*/
-/*  background: #666;*/
-/*}*/
+.code-preview::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
 
 .terminal-preview {
   max-height: 4rem;
