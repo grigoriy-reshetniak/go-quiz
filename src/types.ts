@@ -20,3 +20,10 @@ export type AnsweredQuestion = {
     questionId: string,
     selectedAnswers: string[],
 };
+
+export type QuizResults = (Question & {
+    isCorrect: boolean,
+    selectedAnswers: string[],
+})[];
+
+export type Quiz = Question[];

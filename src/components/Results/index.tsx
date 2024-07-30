@@ -1,36 +1,26 @@
-import { AnsweredQuestion, Question } from '../../types';
-import { CodePreview } from '../CodePreview';
+import { QuizResults } from '../../types';
+import { Question } from '../Question';
 import { Option } from '../Option';
 
-interface ResultsProps {
-  answeredQuestions: AnsweredQuestion[];
-  questions: Question[];
-}
-
-export const Results = ({ answeredQuestions, questions }: ResultsProps) => {
+export const Results = ({ quizResults }: { quizResults: QuizResults }) => {
   return (
-    <div className="quiz">
-      {answeredQuestions.map((answeredQuestion) => {
-        const question = questions.find((question) => question.id === answeredQuestion.questionId);
-        const correctAnswers = question?.answers.filter((answer) => answer.isCorrect).map((answer) => answer.id);
-        const isCorrect = answeredQuestion.selectedAnswers.every((selectedAnswer) => correctAnswers?.includes(selectedAnswer));
+    <>
+      {quizResults.map(({selectedAnswers, isCorrect, ...question}) => {
         return (
-          <div key={answeredQuestion.questionId} className={`question ${isCorrect ? 'correct' : 'incorrect'}`}>
-            <h3>{question?.text}</h3>
-            {question?.code &&
-                <CodePreview code={question.code}/>
-            }
-            {question?.answers.map((answer) => (
+          <div className={`question ${isCorrect ? 'correct' : 'incorrect'}`}>
+            <Question question={question} quizFinished={true} />
+            {question.answers.map((answer) => (
               <Option
                 answer={answer}
                 key={answer.id}
-                isCorrect={correctAnswers?.includes(answer.id)}
-                checked={answeredQuestion.selectedAnswers.includes(answer.id)}
+                checked={selectedAnswers.includes(answer.id)}
+                type={question.isMultipleChoice ? 'checkbox' : 'radio'}
+                disabled
               />
             ))}
           </div>
         );
       })}
-    </div>
+    </>
   );
 };

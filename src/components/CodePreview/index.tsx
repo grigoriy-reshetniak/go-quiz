@@ -12,7 +12,7 @@ interface CodePreviewProps {
 
 export const CodePreview = ({ code, type }: CodePreviewProps) => {
   return (
-    <div className={`${type === 'code' ? 'code-preview' : 'terminal-preview'}`}>
+    <div className={`${type}-preview`}>
       <SyntaxHighlighter
         language={type === 'code' ? 'go' : 'text'}
         style={type === 'code' ? nord : agate}
