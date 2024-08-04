@@ -2,9 +2,10 @@ import { useState, useEffect } from 'react';
 
 interface TimerProps {
   handleFinish: () => void;
+  quizFinished: boolean;
 }
 
-export const Timer = ({ handleFinish }: TimerProps) => {
+export const Timer = ({ handleFinish, quizFinished }: TimerProps) => {
   const [seconds, setSeconds] = useState(1500);
 
   useEffect(() => {
@@ -25,7 +26,7 @@ export const Timer = ({ handleFinish }: TimerProps) => {
 
  return (
    <div className={`timer ${seconds < 120 ? 'expiring' : ''}`}>
-     {formattedTime}
+     {!quizFinished && formattedTime}
    </div>
  )
 };

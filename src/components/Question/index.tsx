@@ -10,20 +10,20 @@ export const Question = ({ question, quizFinished }: QuestionProps) => {
   return (
     <>
       <div className="question-container">
-        <h2 dangerouslySetInnerHTML={{ __html: question.text }}/>
+        <h3 dangerouslySetInnerHTML={{ __html: question.text }}/>
         {quizFinished && <span className="tag">Points: {question.points}</span>}
       </div>
       {question.code &&
-          <CodePreview code={question.code} type="code"/>
+          <CodePreview code={question.code} previewType="code" type="question"/>
       }
       {question.output &&
-          <CodePreview code={question.output} type="terminal"/>
+          <CodePreview code={question.output} previewType="terminal" type="question"/>
       }
-      <div className="tags">
-        {question.tags.map((tag) => (
-          <span key={tag} className="tag">{tag}</span>
-        ))}
-      </div>
+      {/*<div>*/}
+      {/*  {question.tags.map((tag) => (*/}
+      {/*    <span key={tag} className="tag">{tag}</span>*/}
+      {/*  ))}*/}
+      {/*</div>*/}
     </>
   );
 };

@@ -1,5 +1,6 @@
-.answer {
+.option {
   display: flex;
+  align-items: center;
   margin-top: 1rem;
   padding: 1.2rem 0.5rem 1.2rem;
   color: #F8F8F8FF;
@@ -24,17 +25,11 @@
     width: 0;
   }
 
-  .answer-text {
+  .answer {
     position: relative;
     padding-left: 2.5rem;
     line-height: 1.5rem;
-
-    code {
-      font-family: "Go", monospace;
-      padding: .2rem .4rem;
-      background-color: #707d87;
-      border-radius: 6px;
-    }
+    flex-grow: 1;
   }
 
   input[type="checkbox"]:checked + .checkmark {
@@ -78,11 +73,19 @@
   input[type="radio"]:checked + .radio {
     background: var(--dark-blue);
   }
+
+  .answer-text {
+    font-weight: 600;
+  }
 }
 
 .checked {
-  background-color: #0d1117;
-  border-color: #00add8;
+  background-color: var(--blue2);
+  border-color: var(--blue2);
+
+  &:hover {
+    border-color: var(--yellow);
+  }
 
   code {
     background-color: #343941 !important;

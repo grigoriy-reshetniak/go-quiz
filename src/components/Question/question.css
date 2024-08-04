@@ -1,7 +1,3 @@
-.tags {
-  margin: 1rem 0;
-}
-
 .tag {
   color: var(--dark-blue);
   border: 2px solid var(--blue-gray);
@@ -15,4 +11,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+  }
 }

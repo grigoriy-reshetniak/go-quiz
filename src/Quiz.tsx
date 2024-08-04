@@ -10,8 +10,9 @@ import { Logo } from './components/Logo';
 import { Timer } from './components/Timer';
 import { Progress } from './components/Progress';
 import { Results } from './components/Results';
+import { addIds } from './utils';
 
-const quiz = questions as QuestionType[];
+const quiz = addIds(questions as Omit<QuestionType, 'id'>[]);
 
 export const Quiz = () => {
   const [quizStarted, startQuiz] = useState(false);
@@ -90,38 +91,38 @@ export const Quiz = () => {
           <header>
             <Logo handleReset={handleReset}/>
             <Progress progress={questionIndex} total={quiz.length}/>
-            {!quizFinished && <Timer handleFinish={handleFinish}/>}
+            <Timer handleFinish={handleFinish} quizFinished={quizFinished}/>
           </header>
           <main className={`${blur ? 'blur' : ''}`}>
             {quizFinished ? <Results quizResults={quizResults}/> : (
-              <div className="question">
-                <Question question={quiz[questionIndex]} quizFinished={false}/>
-                {quiz[questionIndex].answers.map((answer) => (
-                  <Option
-                    answer={answer}
-                    key={answer.id}
-                    selectAnswer={handleAnswer}
-                    checked={selectedAnswers.includes(answer.id)}
-                    type={quiz[questionIndex].isMultipleChoice ? 'checkbox' : 'radio'}
-                    disabled={false}
-                  />
-                ))}
-              </div>
+              <>
+                <div className="question">
+                  <Question question={quiz[questionIndex]} quizFinished={false}/>
+                  {quiz[questionIndex].answers.map((answer) => (
+                    <Option
+                      answer={answer}
+                      key={answer.id}
+                      selectAnswer={handleAnswer}
+                      checked={selectedAnswers.includes(answer.id)}
+                      type={quiz[questionIndex].isMultipleChoice ? 'checkbox' : 'radio'}
+                      disabled={false}
+                    />
+                  ))}
+                </div>
+                <button
+                  onClick={handleNext}
+                  disabled={selectedAnswers.length === 0}
+                >
+                  {questionIndex === quiz.length - 1 ? 'Finish' : 'Next'}
+                </button>
+              </>
             )}
-            <button
-              onClick={handleNext}
-              disabled={selectedAnswers.length === 0}
-            >
-              {questionIndex === quiz.length - 1 ? 'Finish' : 'Next'}
-            </button>
           </main>
           <Footer/>
         </>
       ) : (
         <Disclaimer startQuiz={() => startQuiz(true)}/>
-      )
-      }
-
+      )}
     </>
-  )
-}
+  );
+};

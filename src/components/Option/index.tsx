@@ -1,5 +1,6 @@
 import { ChangeEvent } from 'react';
 import type { Answer } from '../../types.ts';
+import { CodePreview } from '../CodePreview';
 
 interface AnswerProps {
   answer: Answer;
@@ -10,18 +11,21 @@ interface AnswerProps {
 }
 
 export const Option = ({ answer, selectAnswer, checked, disabled, type }: AnswerProps) => (
-  <label className={`answer ${checked ? 'checked' : ''}`}>
+  <label className={`option ${checked ? 'checked' : ''}`}>
     <input
       type={type}
-      name="answer"
+      name={`answer-${answer.id}`}
       value={answer.id}
       onChange={selectAnswer}
       checked={checked}
       disabled={disabled}
     />
     {type === 'checkbox' ? <span className="checkmark"/> : <span className="radio"/>}
-    <span className="answer-text">
-        {answer.isCode ? <code dangerouslySetInnerHTML={{ __html: answer.text }}></code> : answer.text}
-      </span>
+    <div className="answer">
+        {answer.isCode ?
+          <CodePreview code={answer.text} previewType="code" type="answer"/> :
+          <div className="answer-text" dangerouslySetInnerHTML={{ __html:answer.text }}/>
+        }
+      </div>
   </label>
 );

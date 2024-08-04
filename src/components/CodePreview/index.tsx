@@ -7,22 +7,23 @@ SyntaxHighlighter.registerLanguage('go', go);
 
 interface CodePreviewProps {
   code: string;
-  type: 'code' | 'terminal';
+  previewType: 'code' | 'terminal';
+  type: 'question' | 'answer';
 }
 
-export const CodePreview = ({ code, type }: CodePreviewProps) => {
+export const CodePreview = ({ code, previewType, type }: CodePreviewProps) => {
   return (
-    <div className={`${type}-preview`}>
+    <div className={`${previewType}-preview`}>
       <SyntaxHighlighter
-        language={type === 'code' ? 'go' : 'text'}
-        style={type === 'code' ? nord : agate}
-        showLineNumbers={type === 'code'}
+        language={previewType === 'code' ? 'go' : 'text'}
+        style={previewType === 'code' ? nord : agate}
+        showLineNumbers={previewType === 'code' && type === 'question'}
         customStyle={{
-          padding: type === 'code' ? '0.5rem 0' : '0.5rem 1rem',
+          padding: previewType === 'code' && type === 'question' ? '0.5rem 0' : '0.5rem 1rem',
           margin: 0,
       }}
       >
-        {code}
+        {previewType === 'terminal' ? `> ${code}` : code}
       </SyntaxHighlighter>
     </div>
   );

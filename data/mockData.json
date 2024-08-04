@@ -1,6 +1,5 @@
 [
   {
-    "id": "1",
     "text": "What code produces following output?",
     "output": "Hello world!",
     "tags": ["Terminal preview", "Radio button", "Code in answers"],
@@ -8,19 +7,16 @@
     "points": 1,
     "answers": [
       {
-        "id": "1",
-        "text": "package main",
+        "text": "package main\nimport \"fmt\"\nfmt.Println(\"Hello world!\")",
         "isCode": true,
         "isCorrect": true
       },
       {
-        "id": "2",
         "text": "fmt.Println(\"Hello world!\")",
         "isCode": true,
         "isCorrect": false
       },
       {
-        "id": "4",
         "text": "this is not code at all",
         "isCode": true,
         "isCorrect": false
@@ -28,319 +24,64 @@
     ]
   },
   {
-    "id": "2",
     "text": "What's the output?",
     "code": "package main\nimport \"fmt\"\n// fib returns a function that returns\n// successive Fibonacci numbers.\nfunc fib() func() int {\n\ta, b := 0, 1\n\treturn func() int {\n\t\ta, b = b, a+b\n\t\treturn a\n\t}\n}\n\nfunc main() {\n\tf := fib()\n\t// Function calls are evaluated left-to-right.\n\tfmt.Println(f(), f(), f(), f(), f())\n}",
     "tags": ["Go"],
     "points": 1,
     "answers": [
       {
-        "id": "1",
         "text": "1",
-        "isCorrect": false
+        "isCorrect": false,
+        "isCode": false
       },
       {
-        "id": "2",
         "text": "Panic",
-        "isCorrect": true
+        "isCorrect": true,
+        "isCode": false
       },
       {
-        "id": "3",
         "text": "Not valid",
-        "isCorrect": false
+        "isCorrect": false,
+        "isCode": false
       }
     ]
   },
   {
-    "id": "3",
     "text": "Is this following statement true?",
     "tags": ["Go"],
     "points": 1,
     "answers": [
       {
-        "id": "1",
-        "text": "true"
+        "text": "true",
+        "isCorrect": true,
+        "isCode": false
       },
       {
-        "id": "2",
-        "text": "false"
+        "text": "false",
+        "isCorrect": false,
+        "isCode": false
       }
     ]
   },
   {
-    "id": "4",
     "text": "What's the output?",
     "tags": ["Go"],
     "points": 1,
     "answers": [
       {
-        "id": "1",
-        "text": "Panic"
+        "text": "Panic",
+        "isCorrect": true,
+        "isCode": false
       },
       {
-        "id": "2",
-        "text": "Not panic"
+        "text": "Not panic",
+        "isCorrect": false,
+        "isCode": false
       },
       {
-        "id": "3",
-        "text": "4"
-      }
-    ]
-  },
-  {
-    "id": "5",
-    "text": "What's the output?",
-    "code": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc main() {\n\t\n}",
-    "tags": ["Go"],
-    "points": 1,
-    "answers": [
-      {
-        "id": "1",
-        "text": "1"
-      },
-      {
-        "id": "2",
-        "text": "2",
-        "answersCode": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc main() {\n\t\n}"
-      },
-      {
-        "id": "3",
-        "text": "3"
-      },
-      {
-        "id": "4",
-        "text": "4"
-      }
-    ]
-  },
-  {
-    "id": 6,
-    "text": "Choose the code that will print the following lines:  <br /> Hello! <br />Welcome to \"GoQuiz\"!",
-    "code": "",
-    "isMultipleChoice": true,
-    "isVariative": false,
-    "tags": ["Primitive Types", "Strings"],
-    "points": 1,
-    "answers": [
-      {
-        "id": 0,
-        "text": "fmt.Println(\"Hello!\\nWelcome to \\\"GoQuiz\\\"!\")",
-        "isCode": true,
-        "isCorrect": true
-      },
-      {
-        "id": 1,
-        "text": "fmt.Println(`Hello! <br />Welcome to \"GoQuiz\"!`)",
-        "isCode": true,
-        "isCorrect": true
-      },
-      {
-        "id": 2,
-        "text": "fmt.Println('Hello!\\nWelcome to \"GoQuiz\"!')",
-        "isCode": true,
-        "isCorrect": false
-      },
-      {
-        "id": 3,
-        "text": "fmt.Println(\"Hello!\\nWelcome to \"GoQuiz\"!\")",
-        "isCode": true,
-        "isCorrect": false
-      }
-    ]
-  },
-  {
-    "id": "7",
-    "text": "Is following code valid?",
-    "answers": [
-      {
-        "id": "1",
-        "text": "Yes"
-      },
-      {
-        "id": "2",
-        "text": "No"
-      }
-    ]
-  },
-  {
-    "id": "8",
-    "text": "Is following code valid?",
-    "answers": [
-      {
-        "id": "1",
-        "text": "Yes"
-      },
-      {
-        "id": "2",
-        "text": "No"
-      }
-    ]
-  },
-  {
-    "id": "9",
-    "text": "Is following code valid?",
-    "answers": [
-      {
-        "id": "1",
-        "text": "Yes"
-      },
-      {
-        "id": "2",
-        "text": "No"
-      }
-    ]
-  },
-  {
-    "id": "10",
-    "text": "Is following code valid?",
-    "answers": [
-      {
-        "id": "1",
-        "text": "Yes"
-      },
-      {
-        "id": "2",
-        "text": "No"
-      }
-    ]
-  },
-  {
-    "id": "11",
-    "text": "Is following code valid?",
-    "answers": [
-      {
-        "id": "1",
-        "text": "Yes"
-      },
-      {
-        "id": "2",
-        "text": "No"
-      }
-    ]
-  },
-  {
-    "id": "12",
-    "text": "Is following code valid?",
-    "answers": [
-      {
-        "id": "1",
-        "text": "Yes"
-      },
-      {
-        "id": "2",
-        "text": "No"
-      }
-    ]
-  },
-  {
-    "id": "13",
-    "text": "Is following code valid?",
-    "answers": [
-      {
-        "id": "1",
-        "text": "Yes"
-      },
-      {
-        "id": "2",
-        "text": "No"
-      }
-    ]
-  },
-  {
-    "id": "14",
-    "text": "Is following code valid?",
-    "answers": [
-      {
-        "id": "1",
-        "text": "Yes"
-      },
-      {
-        "id": "2",
-        "text": "No"
-      }
-    ]
-  },
-  {
-    "id": "15",
-    "text": "Is following code valid?",
-    "answers": [
-      {
-        "id": "1",
-        "text": "Yes"
-      },
-      {
-        "id": "2",
-        "text": "No"
-      }
-    ]
-  },
-  {
-    "id": "16",
-    "text": "Is following code valid?",
-    "answers": [
-      {
-        "id": "1",
-        "text": "Yes"
-      },
-      {
-        "id": "2",
-        "text": "No"
-      }
-    ]
-  },
-  {
-    "id": "17",
-    "text": "Is following code valid?",
-    "answers": [
-      {
-        "id": "1",
-        "text": "Yes"
-      },
-      {
-        "id": "2",
-        "text": "No"
-      }
-    ]
-  },
-  {
-    "id": "18",
-    "text": "Is following code valid?",
-    "answers": [
-      {
-        "id": "1",
-        "text": "Yes"
-      },
-      {
-        "id": "2",
-        "text": "No"
-      }
-    ]
-  },
-  {
-    "id": "19",
-    "text": "Is following code valid?",
-    "answers": [
-      {
-        "id": "1",
-        "text": "Yes"
-      },
-      {
-        "id": "2",
-        "text": "No"
-      }
-    ]
-  },
-  {
-    "id": "20",
-    "text": "Is following code valid?",
-    "answers": [
-      {
-        "id": "1",
-        "text": "Yes"
-      },
-      {
-        "id": "2",
-        "text": "No"
+        "text": "4",
+        "isCorrect": false,
+        "isCode": false
       }
     ]
   }
