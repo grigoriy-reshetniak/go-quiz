@@ -119,7 +119,11 @@ main {
   background-color: var(--green2);
   border-color: var(--green);
 
-  .answer {
+  .checked {
+    background-color: var(--green);
+  }
+
+  .option {
     border-color: var(--green);
 
     &:hover {
@@ -127,27 +131,23 @@ main {
       cursor: default;
     }
   }
-
-  .checked {
-    background-color: var(--green);
-  }
 }
 
 .incorrect {
   background-color: var(--red);
   border-color: var(--red2);
 
-  .answer {
+  .checked {
+    background-color: var(--red2);
+  }
+
+  .option {
     border-color: var(--red2);
 
     &:hover {
       border-color: var(--red2);
       cursor: default;
     }
-  }
-
-  .checked {
-    background-color: var(--red2);
   }
 }
 

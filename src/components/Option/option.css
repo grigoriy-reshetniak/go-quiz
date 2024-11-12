@@ -5,7 +5,7 @@
   padding: 1.2rem 0.5rem 1.2rem;
   color: #F8F8F8FF;
 
-  border: 2px solid #035b71;
+  border: 2px solid var(--blue2);
   border-radius: 1rem;
 
   cursor: pointer;
@@ -38,25 +38,28 @@
 
   .checkmark {
     position: relative;
-    top: 0.25rem;
-    left: 1.12rem;
+    left: 1.2rem;
     width: 0.5rem;
-    height: 0.75rem;
+    height: 0.9rem;
     border: solid var(--white);
     border-width: 0 3px 3px 0;
     transform: rotate(45deg);
     visibility: hidden;
   }
 
-  .checkmark + .answer-text::before {
+  .checkmark + .answer::before {
     content: '';
     position: absolute;
     left: 0;
     top: 0;
     width: 1.5rem;
     height: 1.5rem;
-    border: 1px solid var(--white);
+    border: 2px solid var(--white);
     border-radius: 4px;
+  }
+
+  input[type="radio"]:checked + .radio {
+    background: var(--dark-blue);
   }
 
   .radio {
@@ -68,10 +71,6 @@
     border-radius: 50%;
     background: var(--white);
     border: 0.4rem solid var(--white);
-  }
-
-  input[type="radio"]:checked + .radio {
-    background: var(--dark-blue);
   }
 
   .answer-text {

@@ -1,4 +1,5 @@
 import { ChangeEvent } from 'react';
+import {isOutputAnswer, isTextAnswer, isCodeAnswer} from '../../utils.ts';
 import type { Answer } from '../../types.ts';
 import { CodePreview } from '../CodePreview';
 
@@ -22,10 +23,9 @@ export const Option = ({ answer, selectAnswer, checked, disabled, type }: Answer
     />
     {type === 'checkbox' ? <span className="checkmark"/> : <span className="radio"/>}
     <div className="answer">
-        {answer.isCode ?
-          <CodePreview code={answer.text} previewType="code" type="answer"/> :
-          <div className="answer-text" dangerouslySetInnerHTML={{ __html:answer.text }}/>
-        }
+        {isTextAnswer(answer) && <div className="answer-text" dangerouslySetInnerHTML={{__html: answer.text}}/>}
+        {isCodeAnswer(answer) && <CodePreview code={answer.code} previewType="code" type="answer"/>}
+        {isOutputAnswer(answer) && <CodePreview code={answer.output} previewType="terminal" type="answer"/>}
       </div>
   </label>
 );

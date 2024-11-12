@@ -9,12 +9,31 @@ export type Question = {
     isMultipleChoice: boolean,
 };
 
-export type Answer = {
+export type Answer = CodeAnswer | TextAnswer | OutputAnswer;
+
+export type CodeAnswer = {
+    id: string,
+    text: null,
+    code: string,
+    output: null,
+    isCorrect: boolean,
+}
+
+export type TextAnswer = {
     id: string,
     text: string,
-    isCode: boolean,
+    code: null,
+    output: null,
     isCorrect: boolean,
-};
+}
+
+export type OutputAnswer = {
+    id: string,
+    text: null,
+    code: null,
+    output: string,
+    isCorrect: boolean,
+}
 
 export type AnsweredQuestion = {
     questionId: string,

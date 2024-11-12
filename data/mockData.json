@@ -7,18 +7,22 @@
     "points": 1,
     "answers": [
       {
-        "text": "package main\nimport \"fmt\"\nfmt.Println(\"Hello world!\")",
-        "isCode": true,
+        "text": null,
+        "code": "package main\nimport \"fmt\"\nfmt.Println(\"Hello world!\")",
+        "output": null,
         "isCorrect": true
       },
       {
-        "text": "fmt.Println(\"Hello world!\")",
+        "text": null,
+        "code": "fmt.Println(\"Hello world!\")",
+        "output": null,
         "isCode": true,
         "isCorrect": false
       },
       {
         "text": "this is not code at all",
-        "isCode": true,
+        "code": null,
+        "output": null,
         "isCorrect": false
       }
     ]
@@ -26,40 +30,125 @@
   {
     "text": "What's the output?",
     "code": "package main\nimport \"fmt\"\n// fib returns a function that returns\n// successive Fibonacci numbers.\nfunc fib() func() int {\n\ta, b := 0, 1\n\treturn func() int {\n\t\ta, b = b, a+b\n\t\treturn a\n\t}\n}\n\nfunc main() {\n\tf := fib()\n\t// Function calls are evaluated left-to-right.\n\tfmt.Println(f(), f(), f(), f(), f())\n}",
-    "tags": ["Go", "Code in question", "Radio button"],
+    "tags": ["Code in question", "Radio button"],
+    "isMultipleChoice": false,
     "points": 1,
     "answers": [
       {
-        "text": "1",
-        "isCorrect": false,
-        "isCode": false
+        "text": null,
+        "code": null,
+        "output": "1",
+        "isCorrect": false
       },
       {
         "text": "Panic",
-        "isCorrect": true,
-        "isCode": false
+        "code": null,
+        "output": null,
+        "isCorrect": true
       },
       {
         "text": "Not valid",
-        "isCorrect": false,
-        "isCode": false
+        "code": null,
+        "output": null,
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "text": "How to declare a variable in Go?",
+    "tags": ["Code in answers", "Radio button"],
+    "isMultipleChoice": false,
+    "points": 1,
+    "answers": [
+      {
+        "text": null,
+        "code": "fmt.Println(\"Hello world!\")",
+        "output": null,
+        "isCorrect": false
+      },
+      {
+        "text": null,
+        "code": "var d = true",
+        "output": null,
+        "isCorrect": true
+      },
+      {
+        "text": null,
+        "code": "fmt.Println(\"Hello world! 2\")",
+        "output": null,
+        "isCorrect": false
       }
     ]
   },
   {
     "text": "Is this following statement true?",
-    "tags": ["Go", "Radio button"],
+    "tags": ["Radio button", "No code"],
+    "isMultipleChoice": false,
     "points": 1,
     "answers": [
       {
         "text": "true",
-        "isCorrect": true,
-        "isCode": false
+        "code": null,
+        "output": null,
+        "isCorrect": true
       },
       {
         "text": "false",
-        "isCorrect": false,
-        "isCode": false
+        "code": null,
+        "output": null,
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "text": "How to declare a variable in Go?",
+    "tags": ["Code in answers", "Checkbox"],
+    "isMultipleChoice": true,
+    "points": 1,
+    "answers": [
+      {
+        "text": null,
+        "code": "var a = \"initial\"",
+        "output": null,
+        "isCorrect": true
+      },
+      {
+        "text": null,
+        "code": "var d = true",
+        "output": null,
+        "isCorrect": true
+      },
+      {
+        "text": null,
+        "code": "fmt.Println(\"Hello world! 2\")",
+        "output": null,
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "text": "Does checkbox shown without code?",
+    "tags": ["Checkbox", "No code"],
+    "isMultipleChoice": true,
+    "points": 1,
+    "answers": [
+      {
+        "text": "Yes",
+        "code": null,
+        "output": null,
+        "isCorrect": true
+      },
+      {
+        "text": "It does",
+        "code": null,
+        "output": null,
+        "isCorrect": true
+      },
+      {
+        "text": "No, it's not",
+        "code": null,
+        "output": null,
+        "isCorrect": false
       }
     ]
   }

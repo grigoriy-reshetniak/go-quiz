@@ -10,7 +10,7 @@ import { Logo } from './components/Logo';
 import { Timer } from './components/Timer';
 import { Progress } from './components/Progress';
 import { Results } from './components/Results';
-import { addIds } from './utils';
+import { addIds } from './utils.ts';
 
 const quiz = addIds(questions as Omit<QuestionType, 'id'>[]);
 
