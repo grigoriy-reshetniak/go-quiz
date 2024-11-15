@@ -30,7 +30,7 @@
   {
     "text": "What's the output?",
     "code": "package main\nimport \"fmt\"\n// fib returns a function that returns\n// successive Fibonacci numbers.\nfunc fib() func() int {\n\ta, b := 0, 1\n\treturn func() int {\n\t\ta, b = b, a+b\n\t\treturn a\n\t}\n}\n\nfunc main() {\n\tf := fib()\n\t// Function calls are evaluated left-to-right.\n\tfmt.Println(f(), f(), f(), f(), f())\n}",
-    "tags": ["Code in question", "Radio button"],
+    "tags": ["Code in question", "Terminal preview in answers", "Radio button"],
     "isMultipleChoice": false,
     "points": 1,
     "answers": [
@@ -146,6 +146,86 @@
       },
       {
         "text": "No, it's not",
+        "code": null,
+        "output": null,
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "text": "How does mix of code and terminal preview looks like?",
+    "tags": ["Checkbox", "Code in answers", "Terminal preview in answers"],
+    "isMultipleChoice": true,
+    "points": 1,
+    "answers": [
+      {
+        "text": null,
+        "code": null,
+        "output": "It's fine",
+        "isCorrect": true
+      },
+      {
+        "text": null,
+        "code": "Good enough",
+        "output": null,
+        "isCorrect": true
+      },
+      {
+        "text": "It sucks",
+        "code": null,
+        "output": null,
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "text": "Question with a lot of code and with long answers",
+    "code": "// Concurrent computation of pi.\n// The implementation uses the Nilakantha Series.\n//\n// This demonstrates Go's ability to handle\n// large numbers of concurrent processes.\n// It is an unreasonable way to calculate pi.\npackage main\n\nimport (\n\t\"fmt\"\n\t\"math\"\n)\n\nfunc main() {\n\tfmt.Println(\"          math.Pi:\", math.Pi)\n\tfmt.Println(\"Nilakantha Series:\", pi(5000))\n}\n\n// pi launches n goroutines to compute an\n// approximation of pi.\nfunc pi(n int) float64 {\n\tch := make(chan float64)\n\tfor k := 0; k < n; k++ {\n\t\tgo term(ch, float64(k))\n\t}\n\tf := 3.0\n\tfor k := 0; k < n; k++ {\n\t\tf += <-ch\n\t}\n\treturn f\n}\n\nfunc term(ch chan float64, k float64) {\n\tch <- 4 * math.Pow(-1, k) / ((2*k + 2) * (2*k + 3) * (2*k + 4))\n}",
+    "tags": ["Radio button", "Code in answers", "Terminal preview in answers", "Terminal preview"],
+    "isMultipleChoice": false,
+    "points": 1,
+    "answers": [
+      {
+        "text": null,
+        "code": null,
+        "output": "// Concurrent computation of pi.\n// The implementation uses the Nilakantha Series.\n//\n// This demonstrates Go's ability to handle\n// large numbers of concurrent processes.\n// It is an unreasonable way to calculate pi.\npackage main\n\nimport (\n\t\"fmt\"\n\t\"math\"\n)\n\nfunc main() {\n\tfmt.Println(\"          math.Pi:\", math.Pi)\n\tfmt.Println(\"Nilakantha Series:\", pi(5000))\n}\n\n// pi launches n goroutines to compute an\n// approximation of pi.\nfunc pi(n int) float64 {\n\tch := make(chan float64)\n\tfor k := 0; k < n; k++ {\n\t\tgo term(ch, float64(k))\n\t}\n\tf := 3.0\n\tfor k := 0; k < n; k++ {\n\t\tf += <-ch\n\t}\n\treturn f\n}\n\nfunc term(ch chan float64, k float64) {\n\tch <- 4 * math.Pow(-1, k) / ((2*k + 2) * (2*k + 3) * (2*k + 4))\n}",
+        "isCorrect": false
+      },
+      {
+        "text": null,
+        "code": "// Concurrent computation of pi.\n// The implementation uses the Nilakantha Series.\n//\n// This demonstrates Go's ability to handle\n// large numbers of concurrent processes.\n// It is an unreasonable way to calculate pi.\npackage main\n\nimport (\n\t\"fmt\"\n\t\"math\"\n)\n\nfunc main() {\n\tfmt.Println(\"          math.Pi:\", math.Pi)\n\tfmt.Println(\"Nilakantha Series:\", pi(5000))\n}\n\n// pi launches n goroutines to compute an\n// approximation of pi.\nfunc pi(n int) float64 {\n\tch := make(chan float64)\n\tfor k := 0; k < n; k++ {\n\t\tgo term(ch, float64(k))\n\t}\n\tf := 3.0\n\tfor k := 0; k < n; k++ {\n\t\tf += <-ch\n\t}\n\treturn f\n}\n\nfunc term(ch chan float64, k float64) {\n\tch <- 4 * math.Pow(-1, k) / ((2*k + 2) * (2*k + 3) * (2*k + 4))\n}",
+        "output": null,
+        "isCorrect": true
+      },
+      {
+        "text": "// Concurrent computation of pi.\n// The implementation uses the Nilakantha Series.\n//\n// This demonstrates Go's ability to handle\n// large numbers of concurrent processes.\n// It is an unreasonable way to calculate pi.\npackage main\n\nimport (\n\t\"fmt\"\n\t\"math\"\n)\n\nfunc main() {\n\tfmt.Println(\"          math.Pi:\", math.Pi)\n\tfmt.Println(\"Nilakantha Series:\", pi(5000))\n}\n\n// pi launches n goroutines to compute an\n// approximation of pi.\nfunc pi(n int) float64 {\n\tch := make(chan float64)\n\tfor k := 0; k < n; k++ {\n\t\tgo term(ch, float64(k))\n\t}\n\tf := 3.0\n\tfor k := 0; k < n; k++ {\n\t\tf += <-ch\n\t}\n\treturn f\n}\n\nfunc term(ch chan float64, k float64) {\n\tch <- 4 * math.Pow(-1, k) / ((2*k + 2) * (2*k + 3) * (2*k + 4))\n}",
+        "code": null,
+        "output": null,
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "text": "Question with a lot of code and with long answers but checkbox",
+    "code": "// Concurrent computation of pi.\n// The implementation uses the Nilakantha Series.\n//\n// This demonstrates Go's ability to handle\n// large numbers of concurrent processes.\n// It is an unreasonable way to calculate pi.\npackage main\n\nimport (\n\t\"fmt\"\n\t\"math\"\n)\n\nfunc main() {\n\tfmt.Println(\"          math.Pi:\", math.Pi)\n\tfmt.Println(\"Nilakantha Series:\", pi(5000))\n}\n\n// pi launches n goroutines to compute an\n// approximation of pi.\nfunc pi(n int) float64 {\n\tch := make(chan float64)\n\tfor k := 0; k < n; k++ {\n\t\tgo term(ch, float64(k))\n\t}\n\tf := 3.0\n\tfor k := 0; k < n; k++ {\n\t\tf += <-ch\n\t}\n\treturn f\n}\n\nfunc term(ch chan float64, k float64) {\n\tch <- 4 * math.Pow(-1, k) / ((2*k + 2) * (2*k + 3) * (2*k + 4))\n}",
+    "tags": ["Checkbox", "Code in answers", "Terminal preview in answers", "Terminal preview"],
+    "isMultipleChoice": true,
+    "points": 1,
+    "answers": [
+      {
+        "text": null,
+        "code": null,
+        "output": "// Concurrent computation of pi.\n// The implementation uses the Nilakantha Series.\n//\n// This demonstrates Go's ability to handle\n// large numbers of concurrent processes.\n// It is an unreasonable way to calculate pi.\npackage main\n\nimport (\n\t\"fmt\"\n\t\"math\"\n)\n\nfunc main() {\n\tfmt.Println(\"          math.Pi:\", math.Pi)\n\tfmt.Println(\"Nilakantha Series:\", pi(5000))\n}\n\n// pi launches n goroutines to compute an\n// approximation of pi.\nfunc pi(n int) float64 {\n\tch := make(chan float64)\n\tfor k := 0; k < n; k++ {\n\t\tgo term(ch, float64(k))\n\t}\n\tf := 3.0\n\tfor k := 0; k < n; k++ {\n\t\tf += <-ch\n\t}\n\treturn f\n}\n\nfunc term(ch chan float64, k float64) {\n\tch <- 4 * math.Pow(-1, k) / ((2*k + 2) * (2*k + 3) * (2*k + 4))\n}",
+        "isCorrect": true
+      },
+      {
+        "text": null,
+        "code": "// Concurrent computation of pi.\n// The implementation uses the Nilakantha Series.\n//\n// This demonstrates Go's ability to handle\n// large numbers of concurrent processes.\n// It is an unreasonable way to calculate pi.\npackage main\n\nimport (\n\t\"fmt\"\n\t\"math\"\n)\n\nfunc main() {\n\tfmt.Println(\"          math.Pi:\", math.Pi)\n\tfmt.Println(\"Nilakantha Series:\", pi(5000))\n}\n\n// pi launches n goroutines to compute an\n// approximation of pi.\nfunc pi(n int) float64 {\n\tch := make(chan float64)\n\tfor k := 0; k < n; k++ {\n\t\tgo term(ch, float64(k))\n\t}\n\tf := 3.0\n\tfor k := 0; k < n; k++ {\n\t\tf += <-ch\n\t}\n\treturn f\n}\n\nfunc term(ch chan float64, k float64) {\n\tch <- 4 * math.Pow(-1, k) / ((2*k + 2) * (2*k + 3) * (2*k + 4))\n}",
+        "output": null,
+        "isCorrect": true
+      },
+      {
+        "text": "// Concurrent computation of pi.\n// The implementation uses the Nilakantha Series.\n//\n// This demonstrates Go's ability to handle\n// large numbers of concurrent processes.\n// It is an unreasonable way to calculate pi.\npackage main\n\nimport (\n\t\"fmt\"\n\t\"math\"\n)\n\nfunc main() {\n\tfmt.Println(\"          math.Pi:\", math.Pi)\n\tfmt.Println(\"Nilakantha Series:\", pi(5000))\n}\n\n// pi launches n goroutines to compute an\n// approximation of pi.\nfunc pi(n int) float64 {\n\tch := make(chan float64)\n\tfor k := 0; k < n; k++ {\n\t\tgo term(ch, float64(k))\n\t}\n\tf := 3.0\n\tfor k := 0; k < n; k++ {\n\t\tf += <-ch\n\t}\n\treturn f\n}\n\nfunc term(ch chan float64, k float64) {\n\tch <- 4 * math.Pow(-1, k) / ((2*k + 2) * (2*k + 3) * (2*k + 4))\n}",
         "code": null,
         "output": null,
         "isCorrect": false

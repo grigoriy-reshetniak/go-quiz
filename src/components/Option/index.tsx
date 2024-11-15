@@ -23,7 +23,9 @@ export const Option = ({ answer, selectAnswer, checked, disabled, type }: Answer
     />
     {type === 'checkbox' ? <span className="checkmark"/> : <span className="radio"/>}
     <div className="answer">
-        {isTextAnswer(answer) && <div className="answer-text" dangerouslySetInnerHTML={{__html: answer.text}}/>}
+        {isTextAnswer(answer) && <div className="answer-text">
+            <div dangerouslySetInnerHTML={{__html: answer.text}}/>
+        </div>}
         {isCodeAnswer(answer) && <CodePreview code={answer.code} previewType="code" type="answer"/>}
         {isOutputAnswer(answer) && <CodePreview code={answer.output} previewType="terminal" type="answer"/>}
       </div>

@@ -25,7 +25,7 @@
 }
 
 .terminal-preview {
-  max-height: 4rem;
+  max-height: 6rem;
   overflow-y: auto;
   box-shadow: 0 0 0.1rem 0.1rem var(--black);
 
