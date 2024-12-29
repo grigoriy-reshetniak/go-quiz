@@ -30,6 +30,10 @@
     padding-left: 2.5rem;
     line-height: 1.5rem;
     flex-grow: 1;
+
+    &:has(.answer-text) {
+      width: 80%;
+    }
   }
 
   input[type="checkbox"]:checked + .checkmark {
@@ -79,18 +83,12 @@
 
   .answer-text {
     font-weight: 600;
+    max-height: 6rem;
+    overflow-y: auto;
+    padding: 0 16px;
 
-    div {
-      max-height: 6rem;
-      overflow-y: auto;
-    }
-
-    div::-webkit-scrollbar {
-      width: 0.75rem;
-    }
-
-    div::-webkit-scrollbar-thumb {
-      background: var(--blue-gray);
+    &::-webkit-scrollbar {
+      display: none;
     }
   }
 
