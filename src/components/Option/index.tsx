@@ -21,7 +21,14 @@ export const Option = ({ answer, selectAnswer, checked, disabled, type }: Answer
       checked={checked}
       disabled={disabled}
     />
-    {type === 'checkbox' ? <span className="checkmark"/> : <span className="radio"/>}
+    {
+        type === 'checkbox' ?
+            <>
+                <span className="checkmark"/>
+                <span className="checkbox"/>
+            </> :
+            <span className="radio"/>
+    }
     <div className="answer">
         {isTextAnswer(answer) && <div className="answer-text" dangerouslySetInnerHTML={{__html: answer.text}} />}
         {isCodeAnswer(answer) && <CodePreview code={answer.code} previewType="code" type="answer"/>}
