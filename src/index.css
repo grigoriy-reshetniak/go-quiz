@@ -105,6 +105,7 @@ main {
 
 .blur {
   filter: blur(8px);
+  cursor: default;
 }
 
 .question {
