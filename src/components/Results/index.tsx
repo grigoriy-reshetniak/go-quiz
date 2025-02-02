@@ -1,19 +1,18 @@
 import { QuizResults } from '../../types';
 import { Question } from '../Question';
 import { Option } from '../Option';
+import { Score } from '../Score';
 
 export const Results = ({ quizResults }: { quizResults: QuizResults }) => {
+  const { score, checkedQuestions } = quizResults;
+
   return (
     <>
-      {quizResults.map(({ selectedAnswers, isCorrect, ...question }) => (
+      <Score score={score} />
+      {checkedQuestions.map(({ selectedAnswers, isCorrect, ...question }) => (
         <div className={`question ${isCorrect ? 'correct' : 'incorrect'}`} key={question.id}>
           <Question question={question} quizFinished={true}/>
           {question.answers.map((answer) => {
-              console.log('answer.id', answer.id);
-              console.log('answer.text', answer.text);
-              console.log('selectedAnswers', selectedAnswers);
-              console.log('Senpai, notice me!');
-              console.log(selectedAnswers.includes(answer.id));
               return (
                 <Option
                   answer={answer}

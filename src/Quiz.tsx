@@ -27,16 +27,34 @@ export const Quiz = () => {
       return [];
     }
 
-    return answeredQuestions.map((answeredQuestion) => {
+    let correctPoints = 0, totalPoints = 0;
+
+    const checkedQuestions = answeredQuestions.map((answeredQuestion) => {
       const question = quiz.find((question) => question.id === answeredQuestion.questionId);
       const correctAnswers = question?.answers.filter((answer) => answer.isCorrect).map((answer) => answer.id);
       const isCorrect = answeredQuestion.selectedAnswers.every((selectedAnswer) => correctAnswers?.includes(selectedAnswer));
+
+      if (isCorrect) {
+        correctPoints += question?.points ?? 0;
+      }
+
+      totalPoints += question?.points ?? 0;
+
       return {
-        isCorrect,
-        selectedAnswers: answeredQuestion.selectedAnswers,
-        ...question
+          isCorrect,
+          selectedAnswers: answeredQuestion.selectedAnswers,
+          ...question
       };
-    });
+    })
+
+    return {
+      score: {
+        correct: correctPoints,
+        total: totalPoints,
+        successRate: ((correctPoints / totalPoints) * 100).toFixed(2)
+      },
+      checkedQuestions
+    }
   }, [quizFinished, answeredQuestions]);
 
   const handleAnswer = (e: ChangeEvent<HTMLInputElement>) => {
