@@ -51,7 +51,7 @@ export const Quiz = () => {
       score: {
         correct: correctPoints,
         total: totalPoints,
-        successRate: ((correctPoints / totalPoints) * 100).toFixed(2)
+        successRate: Math.round((correctPoints / totalPoints) * 100)
       },
       checkedQuestions
     }

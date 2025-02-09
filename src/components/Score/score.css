@@ -1,0 +1,25 @@
+.score {
+  border: 2px solid var(--white);
+  width: 50%;
+
+  display: flex;
+  justify-content: space-between;
+
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.diagram {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  span {
+    font-size: 2rem;
+    font-weight: bolder;
+  }
+}

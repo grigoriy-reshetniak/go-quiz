@@ -8,6 +8,7 @@
 @import url(./components/Timer/timer.css);
 @import url(./components/Progress/progress.css);
 @import url(./components/Question/question.css);
+@import url(./components/Score/score.css);
 
 @font-face {
   font-family: 'Majorant';
@@ -112,7 +113,7 @@ main {
   border: 2px solid var(--blue-gray);
   width: 50%;
   padding: 0 1.5rem 1.5rem 1.5rem;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   margin-bottom: 1rem;
 }
 
