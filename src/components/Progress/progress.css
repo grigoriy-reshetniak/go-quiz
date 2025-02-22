@@ -4,11 +4,9 @@
   align-items: end;
   width: 54%;
   color: var(--dark-blue);
-  font-family: "Majorant", sans-serif;
 
-  h1 {
-    margin-bottom: 1rem;
-    color: var(--white);
+  .correct {
+    background-color: var(--green);
   }
 }
 
@@ -22,11 +20,20 @@
   z-index: 1;
 }
 
+.results {
+  top: 60%;
+}
+
 .circles-container {
   display: flex;
   justify-content: space-between;
   width: 100%;
   z-index: 2;
+
+  a {
+    text-decoration: none;
+    color: var(--white);
+  }
 }
 
 .circle {

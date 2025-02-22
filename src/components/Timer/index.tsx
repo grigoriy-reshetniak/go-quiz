@@ -6,7 +6,7 @@ interface TimerProps {
 }
 
 export const Timer = ({ handleFinish, quizFinished }: TimerProps) => {
-  const [seconds, setSeconds] = useState(1500);
+  const [seconds, setSeconds] = useState(30);
 
   useEffect(() => {
     if (seconds === 0) {
@@ -14,7 +14,7 @@ export const Timer = ({ handleFinish, quizFinished }: TimerProps) => {
     }
 
     const interval = setInterval(() => {
-      if(seconds > 0 ) {
+      if (seconds > 0) {
         setSeconds(prevSeconds => prevSeconds - 1);
       }
     }, 1000);
@@ -24,9 +24,17 @@ export const Timer = ({ handleFinish, quizFinished }: TimerProps) => {
 
   const formattedTime = `${Math.floor(seconds / 60)}:${(seconds % 60).toString().padStart(2, '0')}`;
 
- return (
-   <div className={`timer ${seconds < 120 ? 'expiring' : ''}`}>
-     {!quizFinished && formattedTime}
-   </div>
- )
+  return (
+    <>
+      {quizFinished ? (
+        <h1>
+          Quiz finished
+        </h1>
+      ) : (
+        <div className={`timer ${seconds < 120 ? 'expiring' : ''}`}>
+          {formattedTime}
+        </div>
+      )}
+    </>
+  )
 };

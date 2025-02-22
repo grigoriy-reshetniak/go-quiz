@@ -10,7 +10,7 @@ export const Results = ({ quizResults }: { quizResults: QuizResults }) => {
     <>
       <Score score={score} />
       {checkedQuestions.map(({ selectedAnswers, isCorrect, ...question }) => (
-        <div className={`question ${isCorrect ? 'correct' : 'incorrect'}`} key={question.id}>
+        <div className={`question ${isCorrect ? 'correct' : 'incorrect'}`} key={question.id} id={question.id}>
           <Question question={question} quizFinished={true}/>
           {question.answers.map((answer) => {
               return (

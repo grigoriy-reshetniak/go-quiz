@@ -42,6 +42,7 @@
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.5;
   font-weight: 400;
+  scroll-behavior: smooth;
 
   color: var(--white);
   background-color: var(--blue);
@@ -157,9 +158,14 @@ header {
   margin: 1rem;
   display: flex;
   justify-content: space-between;
+  font-family: var(--header-font);
 
   .logo {
     height: 3rem;
     cursor: pointer;
+  }
+
+  h1 {
+    margin: 0;
   }
 }

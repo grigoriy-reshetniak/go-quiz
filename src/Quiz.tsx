@@ -22,15 +22,15 @@ export const Quiz = () => {
   const [answeredQuestions, setAnsweredQuestions] = useState<AnsweredQuestion[]>([]);
   const [selectedAnswers, setSelectedAnswers] = useState<string[]>([]);
 
-  const quizResults: QuizResults = useMemo(() => {
+  const quizResults: QuizResults | null = useMemo(() => {
     if (!quizFinished) {
-      return [];
+      return null;
     }
 
     let correctPoints = 0, totalPoints = 0;
 
     const checkedQuestions = answeredQuestions.map((answeredQuestion) => {
-      const question = quiz.find((question) => question.id === answeredQuestion.questionId);
+      const question = quiz.find((question) => question.id === answeredQuestion.questionId)!;
       const correctAnswers = question?.answers.filter((answer) => answer.isCorrect).map((answer) => answer.id);
       const isCorrect = answeredQuestion.selectedAnswers.every((selectedAnswer) => correctAnswers?.includes(selectedAnswer));
 
@@ -108,11 +108,11 @@ export const Quiz = () => {
         <>
           <header>
             <Logo handleReset={handleReset}/>
-            <Progress progress={questionIndex} total={quiz.length}/>
+            <Progress progress={questionIndex} total={quiz.length} results={quizResults} />
             <Timer handleFinish={handleFinish} quizFinished={quizFinished}/>
           </header>
           <main className={`${blur ? 'blur' : ''}`}>
-            {quizFinished ? <Results quizResults={quizResults}/> : (
+            {quizResults ? <Results quizResults={quizResults}/> : (
               <>
                 <div className="question">
                   <Question question={quiz[questionIndex]} quizFinished={false}/>
