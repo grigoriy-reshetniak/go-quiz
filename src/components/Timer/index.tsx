@@ -6,7 +6,7 @@ interface TimerProps {
 }
 
 export const Timer = ({ handleFinish, quizFinished }: TimerProps) => {
-  const [seconds, setSeconds] = useState(30);
+  const [seconds, setSeconds] = useState(1500);
 
   useEffect(() => {
     if (seconds === 0) {

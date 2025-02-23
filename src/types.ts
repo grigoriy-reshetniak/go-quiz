@@ -38,16 +38,13 @@ export type OutputAnswer = {
 export type AnsweredQuestion = {
   questionId: string,
   selectedAnswers: string[],
+  isCorrect: boolean;
 };
 
 export type QuizResults = {
   score: Score,
-  checkedQuestions: (Question & {
-    isCorrect: boolean,
-    selectedAnswers: string[],
-  })[]
+  checkedQuestions: (Question & Omit<AnsweredQuestion, "questionId">)[]
 };
-
 
 export type Score = {
   correct: number,

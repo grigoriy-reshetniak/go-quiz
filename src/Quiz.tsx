@@ -10,9 +10,10 @@ import { Logo } from './components/Logo';
 import { Timer } from './components/Timer';
 import { Progress } from './components/Progress';
 import { Results } from './components/Results';
-import { addIds } from './utils.ts';
+import { addIds, getTotalPoints } from './utils.ts';
 
 const quiz = addIds(questions as Omit<QuestionType, 'id'>[]);
+const totalPoints = getTotalPoints(quiz);
 
 export const Quiz = () => {
   const [quizStarted, startQuiz] = useState(false);
@@ -21,28 +22,25 @@ export const Quiz = () => {
   const [questionIndex, setQuestionIndex] = useState(0);
   const [answeredQuestions, setAnsweredQuestions] = useState<AnsweredQuestion[]>([]);
   const [selectedAnswers, setSelectedAnswers] = useState<string[]>([]);
+  const [correctPoints, setCorrectPoints] = useState(0);
 
   const quizResults: QuizResults | null = useMemo(() => {
     if (!quizFinished) {
       return null;
     }
 
-    let correctPoints = 0, totalPoints = 0;
-
-    const checkedQuestions = answeredQuestions.map((answeredQuestion) => {
-      const question = quiz.find((question) => question.id === answeredQuestion.questionId)!;
-      const correctAnswers = question?.answers.filter((answer) => answer.isCorrect).map((answer) => answer.id);
-      const isCorrect = answeredQuestion.selectedAnswers.every((selectedAnswer) => correctAnswers?.includes(selectedAnswer));
-
-      if (isCorrect) {
-        correctPoints += question?.points ?? 0;
+    const checkedQuestions = quiz.map((question, index) => {
+      if (answeredQuestions[index]) {
+        return {
+          isCorrect: answeredQuestions[index].isCorrect,
+          selectedAnswers: answeredQuestions[index].selectedAnswers,
+          ...question
+        }
       }
 
-      totalPoints += question?.points ?? 0;
-
       return {
-          isCorrect,
-          selectedAnswers: answeredQuestion.selectedAnswers,
+          isCorrect: false,
+          selectedAnswers: [],
           ...question
       };
     })
@@ -55,7 +53,7 @@ export const Quiz = () => {
       },
       checkedQuestions
     }
-  }, [quizFinished, answeredQuestions]);
+  }, [quizFinished, answeredQuestions, correctPoints]);
 
   const handleAnswer = (e: ChangeEvent<HTMLInputElement>) => {
     const selectedAnswerId = e.target.value;
@@ -72,7 +70,16 @@ export const Quiz = () => {
   };
 
   const handleNext = () => {
-    const newAnsweredQuestion = { questionId: quiz[questionIndex].id, selectedAnswers } as AnsweredQuestion;
+    const currentQuestion = quiz[questionIndex];
+    const correctAnswers = currentQuestion.answers.filter((answer) => answer.isCorrect).map((answer) => answer.id);
+    const isCorrect = selectedAnswers.every((selectedAnswer) => correctAnswers.includes(selectedAnswer))
+
+    if (isCorrect) {
+      setCorrectPoints(() => correctPoints + currentQuestion.points);
+    }
+
+    const newAnsweredQuestion: AnsweredQuestion = { questionId: currentQuestion.id, selectedAnswers, isCorrect };
+
     setAnsweredQuestions([...answeredQuestions, newAnsweredQuestion]);
     setQuestionIndex(questionIndex + 1);
     setSelectedAnswers([]);

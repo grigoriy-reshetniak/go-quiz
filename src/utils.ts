@@ -1,5 +1,5 @@
 import {v4 as uuidv4} from 'uuid';
-import {Question, Answer, TextAnswer, CodeAnswer, OutputAnswer} from './types.ts';
+import { Question, Answer, TextAnswer, CodeAnswer, OutputAnswer, Quiz } from './types.ts';
 
 export const addIds = (rawData: Omit<Question, 'id'>[]): Question[] =>
     rawData.map((question: Omit<Question, 'id'>) => ({
@@ -21,4 +21,11 @@ export function isCodeAnswer(answer: Answer): answer is CodeAnswer {
 
 export function isOutputAnswer(answer: Answer): answer is OutputAnswer {
     return answer.text === null && answer.code === null && answer.output !== null;
+}
+
+export function getTotalPoints(quiz: Quiz): number {
+  return quiz.reduce(
+    (acc, question) => acc + question.points,
+    0,
+  );
 }
