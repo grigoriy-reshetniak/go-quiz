@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { saveToLocalStorage } from '../../utils.ts';
 
 interface TimerProps {
   handleFinish: () => void;
@@ -6,18 +7,26 @@ interface TimerProps {
 }
 
 export const Timer = ({ handleFinish, quizFinished }: TimerProps) => {
-  const [seconds, setSeconds] = useState(1500);
+  const [seconds, setSeconds] = useState<number>(() => {
+    const savedTimer = localStorage.getItem("timer");
+
+    return savedTimer ? +savedTimer : 1500;
+  });
 
   useEffect(() => {
     if (seconds === 0) {
       handleFinish();
     }
 
-    const interval = setInterval(() => {
-      if (seconds > 0) {
-        setSeconds(prevSeconds => prevSeconds - 1);
+    const interval = setInterval(() => setSeconds(prevSeconds => {
+      const updatedTime = prevSeconds - 1;
+
+      if (updatedTime % 10 === 0) {
+        saveToLocalStorage('timer', updatedTime);
       }
-    }, 1000);
+
+      return updatedTime;
+    }), 1000);
 
     return () => clearInterval(interval);
   }, [seconds, handleFinish]);

@@ -10,19 +10,23 @@ import { Logo } from './components/Logo';
 import { Timer } from './components/Timer';
 import { Progress } from './components/Progress';
 import { Results } from './components/Results';
-import { addIds, getTotalPoints } from './utils.ts';
+import { addIds, getFromLocalStorage, getTotalPoints, saveToLocalStorage } from './utils.ts';
 
 const quiz = addIds(questions as Omit<QuestionType, 'id'>[]);
 const totalPoints = getTotalPoints(quiz);
 
 export const Quiz = () => {
-  const [quizStarted, startQuiz] = useState(false);
-  const [quizFinished, finishQuiz] = useState(false);
+  const [quizStarted, startQuiz] = useState<boolean>(() => getFromLocalStorage('quizStarted') ?? false);
+  const [quizFinished, finishQuiz] = useState<boolean>(() => getFromLocalStorage('quizFinished') ?? false);
+  const [questionIndex, setQuestionIndex] = useState<number>(() => getFromLocalStorage('currentStep') ?? 0);
+  const [correctPoints, setCorrectPoints] = useState<number>(() => getFromLocalStorage('correctPoints') ?? 0);
   const [blur, setBlur] = useState(false);
-  const [questionIndex, setQuestionIndex] = useState(0);
-  const [answeredQuestions, setAnsweredQuestions] = useState<AnsweredQuestion[]>([]);
-  const [selectedAnswers, setSelectedAnswers] = useState<string[]>([]);
-  const [correctPoints, setCorrectPoints] = useState(0);
+  const [selectedAnswers, setSelectedAnswers] = useState<string[]>(
+    () => getFromLocalStorage('selectedAnswers') ?? []
+  );
+  const [answeredQuestions, setAnsweredQuestions] = useState<AnsweredQuestion[]>(
+    () => getFromLocalStorage('answeredQuestions') ?? []
+  );
 
   const quizResults: QuizResults | null = useMemo(() => {
     if (!quizFinished) {
@@ -39,9 +43,9 @@ export const Quiz = () => {
       }
 
       return {
-          isCorrect: false,
-          selectedAnswers: [],
-          ...question
+        isCorrect: false,
+        selectedAnswers: [],
+        ...question
       };
     })
 
@@ -60,11 +64,18 @@ export const Quiz = () => {
 
     if (!quiz[questionIndex].isMultipleChoice) {
       setSelectedAnswers([selectedAnswerId]);
+      saveToLocalStorage('selectedAnswers', [selectedAnswerId]);
     } else {
       if (selectedAnswers.includes(selectedAnswerId)) {
-        setSelectedAnswers(selectedAnswers.filter((answerId) => answerId !== selectedAnswerId));
+        const answersAfterUncheck = selectedAnswers.filter(
+          (answerId) => answerId !== selectedAnswerId
+        );
+
+        setSelectedAnswers(answersAfterUncheck);
+        saveToLocalStorage('selectedAnswers', [selectedAnswerId]);
       } else {
         setSelectedAnswers([...selectedAnswers, selectedAnswerId]);
+        saveToLocalStorage('selectedAnswers', [...selectedAnswers, selectedAnswerId]);
       }
     }
   };
@@ -75,22 +86,35 @@ export const Quiz = () => {
     const isCorrect = selectedAnswers.every((selectedAnswer) => correctAnswers.includes(selectedAnswer))
 
     if (isCorrect) {
-      setCorrectPoints(() => correctPoints + currentQuestion.points);
+      const updatedPoints = correctPoints + currentQuestion.points;
+
+      setCorrectPoints(updatedPoints);
+      saveToLocalStorage('correctPoints', updatedPoints);
     }
 
-    const newAnsweredQuestion: AnsweredQuestion = { questionId: currentQuestion.id, selectedAnswers, isCorrect };
+    const newAnsweredQuestion: AnsweredQuestion = {
+      questionId: currentQuestion.id,
+      selectedAnswers,
+      isCorrect
+    };
 
     setAnsweredQuestions([...answeredQuestions, newAnsweredQuestion]);
     setQuestionIndex(questionIndex + 1);
     setSelectedAnswers([]);
 
+    saveToLocalStorage('currentStep', questionIndex + 1);
+    saveToLocalStorage('answeredQuestions', [...answeredQuestions, newAnsweredQuestion]);
+    saveToLocalStorage('selectedAnswers', []);
+
     if (questionIndex === quiz.length - 1) {
       finishQuiz(true);
+      saveToLocalStorage('quizFinished', true);
     }
   };
 
   const handleFinish = () => {
     finishQuiz(true);
+    saveToLocalStorage('quizFinished', true);
   }
 
   const handleReset = () => {
@@ -103,6 +127,7 @@ export const Quiz = () => {
         setSelectedAnswers([]);
         startQuiz(false);
         finishQuiz(false);
+        localStorage.clear();
       }
 
       setBlur(false);
@@ -115,14 +140,16 @@ export const Quiz = () => {
         <>
           <header>
             <Logo handleReset={handleReset}/>
-            <Progress progress={questionIndex} total={quiz.length} results={quizResults} />
+            <Progress progress={questionIndex} total={quiz.length}
+                      results={quizResults}/>
             <Timer handleFinish={handleFinish} quizFinished={quizFinished}/>
           </header>
           <main className={`${blur ? 'blur' : ''}`}>
             {quizResults ? <Results quizResults={quizResults}/> : (
               <>
                 <div className="question">
-                  <Question question={quiz[questionIndex]} quizFinished={false}/>
+                  <Question question={quiz[questionIndex]}
+                            quizFinished={false}/>
                   {quiz[questionIndex].answers.map((answer) => (
                     <Option
                       answer={answer}
@@ -146,7 +173,11 @@ export const Quiz = () => {
           <Footer/>
         </>
       ) : (
-        <Disclaimer startQuiz={() => startQuiz(true)}/>
+        <Disclaimer startQuiz={() => {
+          startQuiz(true);
+          saveToLocalStorage('quizStarted', true);
+          saveToLocalStorage('currentStep', 0);
+        }}/>
       )}
     </>
   );

@@ -53,3 +53,13 @@ export type Score = {
 }
 
 export type Quiz = Question[];
+
+export type LocalStorage = {
+  quizStarted: boolean;
+  quizFinished: boolean;
+  currentStep: number
+  correctPoints: number;
+  answeredQuestions: AnsweredQuestion[];
+  selectedAnswers: string[];
+  timer: number;
+};
