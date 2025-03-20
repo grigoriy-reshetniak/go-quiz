@@ -10,9 +10,9 @@ import { Logo } from './components/Logo';
 import { Timer } from './components/Timer';
 import { Progress } from './components/Progress';
 import { Results } from './components/Results';
-import { addIds, getFromLocalStorage, getTotalPoints, saveToLocalStorage } from './utils.ts';
+import { getFromLocalStorage, getTotalPoints, saveToLocalStorage } from './utils.ts';
 
-const quiz = addIds(questions as Omit<QuestionType, 'id'>[]);
+const quiz = questions as QuestionType[];
 const totalPoints = getTotalPoints(quiz);
 
 export const Quiz = () => {

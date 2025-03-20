@@ -1,5 +1,6 @@
 [
   {
+    "id": "8CE48A5F-95DB-4D7B-9CF8-0C845B5FAF52",
     "text": "What code produces following output?",
     "output": "Hello world!",
     "tags": ["Terminal preview", "Radio button", "Code in answers"],
@@ -7,12 +8,14 @@
     "points": 1,
     "answers": [
       {
+        "id": "05C01FBD-93C5-4A82-A9F0-9CACEEE3CDDC",
         "text": null,
         "code": "package main\nimport \"fmt\"\nfmt.Println(\"Hello world!\")",
         "output": null,
         "isCorrect": true
       },
       {
+        "id": "360D1391-D9B9-4C7F-A7E1-E194F0D964D0",
         "text": null,
         "code": "fmt.Println(\"Hello world!\")",
         "output": null,
@@ -20,6 +23,7 @@
         "isCorrect": false
       },
       {
+        "id": "39CE0143-0327-4FE1-BFE8-91D2865895D9",
         "text": "this is not code at all",
         "code": null,
         "output": null,
@@ -28,6 +32,7 @@
     ]
   },
   {
+    "id": "50B0FEB5-C42E-40CE-AFD9-033085EF9A29",
     "text": "What's the output?",
     "code": "package main\nimport \"fmt\"\n// fib returns a function that returns\n// successive Fibonacci numbers.\nfunc fib() func() int {\n\ta, b := 0, 1\n\treturn func() int {\n\t\ta, b = b, a+b\n\t\treturn a\n\t}\n}\n\nfunc main() {\n\tf := fib()\n\t// Function calls are evaluated left-to-right.\n\tfmt.Println(f(), f(), f(), f(), f())\n}",
     "tags": ["Code in question", "Terminal preview in answers", "Radio button"],
@@ -35,18 +40,21 @@
     "points": 1,
     "answers": [
       {
+        "id": "BCFA596E-E668-4E47-98E9-4BE50E64EA08",
         "text": null,
         "code": null,
         "output": "1",
         "isCorrect": false
       },
       {
+        "id": "815D60D3-3227-4B2F-A312-4ACCFDC81789",
         "text": "Panic",
         "code": null,
         "output": null,
         "isCorrect": true
       },
       {
+        "id": "25B81A9A-F4B6-4C17-AD44-5535F5A0DFD2",
         "text": "Not valid",
         "code": null,
         "output": null,
@@ -55,24 +63,28 @@
     ]
   },
   {
+    "id": "E7581475-BDA5-4D04-BE4D-5A8B28B8B02E",
     "text": "How to declare a variable in Go?",
     "tags": ["Code in answers", "Radio button"],
     "isMultipleChoice": false,
     "points": 1,
     "answers": [
       {
+        "id": "713DC1B4-7D0C-450E-9915-33F452CFF1DF",
         "text": null,
         "code": "fmt.Println(\"Hello world!\")",
         "output": null,
         "isCorrect": false
       },
       {
+        "id": "ED99439C-28B3-4F34-A3FC-47B48E386495",
         "text": null,
         "code": "var d = true",
         "output": null,
         "isCorrect": true
       },
       {
+        "id": "473DBE43-E9FA-4E30-A3E3-CCE8F6A490A5",
         "text": null,
         "code": "fmt.Println(\"Hello world! 2\")",
         "output": null,
@@ -81,18 +93,21 @@
     ]
   },
   {
+    "id": "066F7314-89A7-4FA4-9E81-6C9D08889F96",
     "text": "Is this following statement true?",
     "tags": ["Radio button", "No code"],
     "isMultipleChoice": false,
     "points": 1,
     "answers": [
       {
+        "id": "FA93DA30-8E3B-4319-80C6-814299CAD69F",
         "text": "true",
         "code": null,
         "output": null,
         "isCorrect": true
       },
       {
+        "id": "62D80854-941E-4684-954B-E7D3C49CCF65",
         "text": "false",
         "code": null,
         "output": null,
@@ -101,24 +116,28 @@
     ]
   },
   {
+    "id": "D190B616-5FA6-418A-B272-3D5907256DF6",
     "text": "How to declare a variable in Go?",
     "tags": ["Code in answers", "Checkbox"],
     "isMultipleChoice": true,
     "points": 1,
     "answers": [
       {
+        "id": "BEF33356-CFF9-4E2A-B497-75C3977E5DB3",
         "text": null,
         "code": "var a = \"initial\"",
         "output": null,
         "isCorrect": true
       },
       {
+        "id": "0847622B-3EEB-4B72-92C5-90966438361B",
         "text": null,
         "code": "var d = true",
         "output": null,
         "isCorrect": true
       },
       {
+        "id": "B33972B0-C160-4E01-84F3-4F451353F39D",
         "text": null,
         "code": "fmt.Println(\"Hello world! 2\")",
         "output": null,
@@ -127,24 +146,28 @@
     ]
   },
   {
+    "id": "7F66A629-DB80-42BE-8501-8E3CF953CA1A",
     "text": "Does checkbox shown without code?",
     "tags": ["Checkbox", "No code"],
     "isMultipleChoice": true,
     "points": 1,
     "answers": [
       {
+        "id": "7C0C0B8D-6F93-4D78-A511-6E7AF6A0A937",
         "text": "Yes",
         "code": null,
         "output": null,
         "isCorrect": true
       },
       {
+        "id": "B46C6B3B-EA45-4107-AA6F-C46303011793",
         "text": "It does",
         "code": null,
         "output": null,
         "isCorrect": true
       },
       {
+        "id": "498B50C5-B8D7-41A5-8F60-F4A8A087B73E",
         "text": "No, it's not",
         "code": null,
         "output": null,
@@ -153,24 +176,28 @@
     ]
   },
   {
+    "id": "BF274E79-BC70-4259-AFB3-C4F4CE9F2998",
     "text": "How does mix of code and terminal preview looks like?",
     "tags": ["Checkbox", "Code in answers", "Terminal preview in answers"],
     "isMultipleChoice": true,
     "points": 1,
     "answers": [
       {
+        "id": "E56FC33D-3019-48BD-AB4A-82D006302C53",
         "text": null,
         "code": null,
         "output": "It's fine",
         "isCorrect": true
       },
       {
+        "id": "8D28D4C2-C71C-4ADF-A833-29181521D7A4",
         "text": null,
         "code": "Good enough",
         "output": null,
         "isCorrect": true
       },
       {
+        "id": "AD9120D7-0E99-4E2E-BBED-70AB557E76E5",
         "text": "It sucks",
         "code": null,
         "output": null,
@@ -179,6 +206,7 @@
     ]
   },
   {
+    "id": "C153CF32-3443-463B-90DF-9940B2C31A60",
     "text": "Question with a lot of code and with long answers",
     "code": "// Concurrent computation of pi.\n// The implementation uses the Nilakantha Series.\n//\n// This demonstrates Go's ability to handle\n// large numbers of concurrent processes.\n// It is an unreasonable way to calculate pi.\npackage main\n\nimport (\n\t\"fmt\"\n\t\"math\"\n)\n\nfunc main() {\n\tfmt.Println(\"          math.Pi:\", math.Pi)\n\tfmt.Println(\"Nilakantha Series:\", pi(5000))\n}\n\n// pi launches n goroutines to compute an\n// approximation of pi.\nfunc pi(n int) float64 {\n\tch := make(chan float64)\n\tfor k := 0; k < n; k++ {\n\t\tgo term(ch, float64(k))\n\t}\n\tf := 3.0\n\tfor k := 0; k < n; k++ {\n\t\tf += <-ch\n\t}\n\treturn f\n}\n\nfunc term(ch chan float64, k float64) {\n\tch <- 4 * math.Pow(-1, k) / ((2*k + 2) * (2*k + 3) * (2*k + 4))\n}",
     "tags": ["Radio button", "Code in answers", "Terminal preview in answers", "Terminal preview"],
@@ -186,18 +214,21 @@
     "points": 1,
     "answers": [
       {
+        "id": "C355DAD9-E28E-41F5-AA77-A9541C1387DA",
         "text": null,
         "code": null,
         "output": "// Concurrent computation of pi.\n// The implementation uses the Nilakantha Series.\n//\n// This demonstrates Go's ability to handle\n// large numbers of concurrent processes.\n// It is an unreasonable way to calculate pi.\npackage main\n\nimport (\n\t\"fmt\"\n\t\"math\"\n)\n\nfunc main() {\n\tfmt.Println(\"          math.Pi:\", math.Pi)\n\tfmt.Println(\"Nilakantha Series:\", pi(5000))\n}\n\n// pi launches n goroutines to compute an\n// approximation of pi.\nfunc pi(n int) float64 {\n\tch := make(chan float64)\n\tfor k := 0; k < n; k++ {\n\t\tgo term(ch, float64(k))\n\t}\n\tf := 3.0\n\tfor k := 0; k < n; k++ {\n\t\tf += <-ch\n\t}\n\treturn f\n}\n\nfunc term(ch chan float64, k float64) {\n\tch <- 4 * math.Pow(-1, k) / ((2*k + 2) * (2*k + 3) * (2*k + 4))\n}",
         "isCorrect": false
       },
       {
+        "id": "B5E656EA-AB93-4E15-AFFE-1B6D74163E95",
         "text": null,
         "code": "// Concurrent computation of pi.\n// The implementation uses the Nilakantha Series.\n//\n// This demonstrates Go's ability to handle\n// large numbers of concurrent processes.\n// It is an unreasonable way to calculate pi.\npackage main\n\nimport (\n\t\"fmt\"\n\t\"math\"\n)\n\nfunc main() {\n\tfmt.Println(\"          math.Pi:\", math.Pi)\n\tfmt.Println(\"Nilakantha Series:\", pi(5000))\n}\n\n// pi launches n goroutines to compute an\n// approximation of pi.\nfunc pi(n int) float64 {\n\tch := make(chan float64)\n\tfor k := 0; k < n; k++ {\n\t\tgo term(ch, float64(k))\n\t}\n\tf := 3.0\n\tfor k := 0; k < n; k++ {\n\t\tf += <-ch\n\t}\n\treturn f\n}\n\nfunc term(ch chan float64, k float64) {\n\tch <- 4 * math.Pow(-1, k) / ((2*k + 2) * (2*k + 3) * (2*k + 4))\n}",
         "output": null,
         "isCorrect": true
       },
       {
+        "id": "AB7BA97F-0012-44C3-9300-13D081DE260A",
         "text": "// Concurrent computation of pi.\n// The implementation uses the Nilakantha Series.\n//\n// This demonstrates Go's ability to handle\n// large numbers of concurrent processes.\n// It is an unreasonable way to calculate pi.\npackage main\n\nimport (\n\t\"fmt\"\n\t\"math\"\n)\n\nfunc main() {\n\tfmt.Println(\"          math.Pi:\", math.Pi)\n\tfmt.Println(\"Nilakantha Series:\", pi(5000))\n}\n\n// pi launches n goroutines to compute an\n// approximation of pi.\nfunc pi(n int) float64 {\n\tch := make(chan float64)\n\tfor k := 0; k < n; k++ {\n\t\tgo term(ch, float64(k))\n\t}\n\tf := 3.0\n\tfor k := 0; k < n; k++ {\n\t\tf += <-ch\n\t}\n\treturn f\n}\n\nfunc term(ch chan float64, k float64) {\n\tch <- 4 * math.Pow(-1, k) / ((2*k + 2) * (2*k + 3) * (2*k + 4))\n}",
         "code": null,
         "output": null,
@@ -206,6 +237,7 @@
     ]
   },
   {
+    "id": "32A7882A-D2B8-4FC4-9527-ACA8DFE3B50B",
     "text": "Question with a lot of code and with long answers but checkbox",
     "code": "// Concurrent computation of pi.\n// The implementation uses the Nilakantha Series.\n//\n// This demonstrates Go's ability to handle\n// large numbers of concurrent processes.\n// It is an unreasonable way to calculate pi.\npackage main\n\nimport (\n\t\"fmt\"\n\t\"math\"\n)\n\nfunc main() {\n\tfmt.Println(\"          math.Pi:\", math.Pi)\n\tfmt.Println(\"Nilakantha Series:\", pi(5000))\n}\n\n// pi launches n goroutines to compute an\n// approximation of pi.\nfunc pi(n int) float64 {\n\tch := make(chan float64)\n\tfor k := 0; k < n; k++ {\n\t\tgo term(ch, float64(k))\n\t}\n\tf := 3.0\n\tfor k := 0; k < n; k++ {\n\t\tf += <-ch\n\t}\n\treturn f\n}\n\nfunc term(ch chan float64, k float64) {\n\tch <- 4 * math.Pow(-1, k) / ((2*k + 2) * (2*k + 3) * (2*k + 4))\n}",
     "tags": ["Checkbox", "Code in answers", "Terminal preview in answers", "Terminal preview"],
@@ -213,18 +245,21 @@
     "points": 1,
     "answers": [
       {
+        "id": "08EF412D-4396-4A47-98A0-6D2C683A411E",
         "text": null,
         "code": null,
         "output": "// Concurrent computation of pi.\n// The implementation uses the Nilakantha Series.\n//\n// This demonstrates Go's ability to handle\n// large numbers of concurrent processes.\n// It is an unreasonable way to calculate pi.\npackage main\n\nimport (\n\t\"fmt\"\n\t\"math\"\n)\n\nfunc main() {\n\tfmt.Println(\"          math.Pi:\", math.Pi)\n\tfmt.Println(\"Nilakantha Series:\", pi(5000))\n}\n\n// pi launches n goroutines to compute an\n// approximation of pi.\nfunc pi(n int) float64 {\n\tch := make(chan float64)\n\tfor k := 0; k < n; k++ {\n\t\tgo term(ch, float64(k))\n\t}\n\tf := 3.0\n\tfor k := 0; k < n; k++ {\n\t\tf += <-ch\n\t}\n\treturn f\n}\n\nfunc term(ch chan float64, k float64) {\n\tch <- 4 * math.Pow(-1, k) / ((2*k + 2) * (2*k + 3) * (2*k + 4))\n}",
         "isCorrect": true
       },
       {
+        "id": "92100371-F048-46A3-A3EB-319E7AF8EB1B",
         "text": null,
         "code": "// Concurrent computation of pi.\n// The implementation uses the Nilakantha Series.\n//\n// This demonstrates Go's ability to handle\n// large numbers of concurrent processes.\n// It is an unreasonable way to calculate pi.\npackage main\n\nimport (\n\t\"fmt\"\n\t\"math\"\n)\n\nfunc main() {\n\tfmt.Println(\"          math.Pi:\", math.Pi)\n\tfmt.Println(\"Nilakantha Series:\", pi(5000))\n}\n\n// pi launches n goroutines to compute an\n// approximation of pi.\nfunc pi(n int) float64 {\n\tch := make(chan float64)\n\tfor k := 0; k < n; k++ {\n\t\tgo term(ch, float64(k))\n\t}\n\tf := 3.0\n\tfor k := 0; k < n; k++ {\n\t\tf += <-ch\n\t}\n\treturn f\n}\n\nfunc term(ch chan float64, k float64) {\n\tch <- 4 * math.Pow(-1, k) / ((2*k + 2) * (2*k + 3) * (2*k + 4))\n}",
         "output": null,
         "isCorrect": true
       },
       {
+        "id": "3B59737A-D811-4695-8EFD-B55F39664CFB",
         "text": "// Concurrent computation of pi.\n// The implementation uses the Nilakantha Series.\n//\n// This demonstrates Go's ability to handle\n// large numbers of concurrent processes.\n// It is an unreasonable way to calculate pi.\npackage main\n\nimport (\n\t\"fmt\"\n\t\"math\"\n)\n\nfunc main() {\n\tfmt.Println(\"          math.Pi:\", math.Pi)\n\tfmt.Println(\"Nilakantha Series:\", pi(5000))\n}\n\n// pi launches n goroutines to compute an\n// approximation of pi.\nfunc pi(n int) float64 {\n\tch := make(chan float64)\n\tfor k := 0; k < n; k++ {\n\t\tgo term(ch, float64(k))\n\t}\n\tf := 3.0\n\tfor k := 0; k < n; k++ {\n\t\tf += <-ch\n\t}\n\treturn f\n}\n\nfunc term(ch chan float64, k float64) {\n\tch <- 4 * math.Pow(-1, k) / ((2*k + 2) * (2*k + 3) * (2*k + 4))\n}",
         "code": null,
         "output": null,

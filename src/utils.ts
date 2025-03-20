@@ -1,16 +1,4 @@
-import { v4 as uuidv4 } from 'uuid';
-import { Question, Answer, TextAnswer, CodeAnswer, OutputAnswer, Quiz, LocalStorage } from './types.ts';
-
-// only for mock
-export const addIds = (rawData: Omit<Question, 'id'>[]): Question[] =>
-  rawData.map((question: Omit<Question, 'id'>) => ({
-    ...question,
-    id: uuidv4(),
-    answers: question.answers.map((answer: Omit<Answer, 'id'>) => ({
-      ...answer,
-      id: uuidv4()
-    })) as Answer[]
-  }));
+import { Answer, TextAnswer, CodeAnswer, OutputAnswer, Quiz, LocalStorage } from './types.ts';
 
 export function isTextAnswer(answer: Answer): answer is TextAnswer {
   return answer.text !== null && answer.code === null && answer.output === null;
