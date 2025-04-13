@@ -10,7 +10,7 @@ export const Timer = ({ handleFinish, quizFinished }: TimerProps) => {
   const [seconds, setSeconds] = useState<number>(() => {
     const savedTimer = localStorage.getItem("timer");
 
-    return savedTimer ? +savedTimer : 1500;
+    return savedTimer ? +savedTimer : 600;
   });
 
   useEffect(() => {

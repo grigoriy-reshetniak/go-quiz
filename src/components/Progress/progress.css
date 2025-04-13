@@ -6,7 +6,11 @@
   color: var(--dark-blue);
 
   .correct {
-    background-color: var(--green);
+    background-color: var(--green3);
+  }
+
+  .incorrect {
+    background-color: var(--red3);
   }
 }
 

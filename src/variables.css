@@ -9,8 +9,10 @@
   --black: rgb(51, 51, 51);
   --green: rgba(9, 168, 4, 0.3);
   --green2: rgba(9, 168, 4, 0.1);
+  --green3: rgba(64, 162, 61);
   --red: rgba(255, 0, 0, 0.3);
   --red2: rgba(255, 0, 0, 0.2);
+  --red3: rgba(188, 86, 86);
   --font: Helvetica, Arial, sans-serif;
   --code-font: Go, sans-serif;
   --header-font: Majorant, sans-serif;
