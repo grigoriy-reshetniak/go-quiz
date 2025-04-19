@@ -3,7 +3,7 @@
   align-items: center;
   margin-top: 1rem;
   padding: 1.2rem 0.5rem 1.2rem;
-  color: #F8F8F8FF;
+  color: var(--white);
 
   border: 2px solid var(--blue2);
   border-radius: 1rem;

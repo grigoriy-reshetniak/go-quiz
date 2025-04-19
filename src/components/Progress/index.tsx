@@ -5,9 +5,10 @@ interface ProgressProps {
   progress: number;
   total: number;
   results: QuizResults | null;
+  quizFinished: boolean;
 }
 
-export const Progress = ({ progress, total, results }: ProgressProps) => {
+export const Progress = ({ progress, total, results, quizFinished }: ProgressProps) => {
   const inProgressCircles = useMemo(() => {
     const circles: JSX.Element[] = [];
 
@@ -39,9 +40,9 @@ export const Progress = ({ progress, total, results }: ProgressProps) => {
 
   return (
     <div className="progress-bar">
-      <div className={`line ${progress === total ? 'results' : ''}`}></div>
+      <div className={`line ${quizFinished ? 'results' : ''}`}></div>
       <div className="circles-container">
-        {progress === total ? completedCircles : inProgressCircles}
+        {quizFinished ? completedCircles : inProgressCircles}
       </div>
     </div>
   );

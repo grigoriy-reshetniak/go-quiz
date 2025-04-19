@@ -140,16 +140,19 @@ export const Quiz = () => {
         <>
           <header>
             <Logo handleReset={handleReset}/>
-            <Progress progress={questionIndex} total={quiz.length}
-                      results={quizResults}/>
+            <Progress
+              progress={questionIndex}
+              total={quiz.length}
+              results={quizResults}
+              quizFinished={quizFinished}
+            />
             <Timer handleFinish={handleFinish} quizFinished={quizFinished}/>
           </header>
           <main className={`${blur ? 'blur' : ''}`}>
             {quizResults ? <Results quizResults={quizResults}/> : (
               <>
                 <div className="question">
-                  <Question question={quiz[questionIndex]}
-                            quizFinished={false}/>
+                  <Question question={quiz[questionIndex]} quizFinished={false}/>
                   {quiz[questionIndex].answers.map((answer) => (
                     <Option
                       answer={answer}

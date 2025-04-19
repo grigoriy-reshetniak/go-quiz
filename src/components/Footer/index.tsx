@@ -9,11 +9,11 @@ export const Footer = () => {
           href="https://www.buymeacoffee.com/"
           target="_blank"
           rel="noopener"
+          title="Buy a coffee for Grigoriy Reshetniak"
         >
           <img
             src="https://cdn.buymeacoffee.com/buttons/v2/default-blue.png"
             alt="Buy Me A Coffee"
-            title="Buy a coffee for Grigoriy Reshetniak"
             className="by-me-a-coffee"
           />
         </a>
@@ -27,17 +27,17 @@ export const Footer = () => {
         <img src="../../../assets/images/github-logo-light.svg" alt="Github logo"/>
         <span>github</span>
       </a>
-      <span>2024</span>
+      <span>2025</span>
       <div className="subsection">
         <a
           href="https://www.buymeacoffee.com/"
           target="_blank"
           rel="noopener"
+          title="Buy a coffee for Kateryna Azarenko"
         >
           <img
             src="https://cdn.buymeacoffee.com/buttons/v2/default-blue.png"
             alt="Buy Me A Coffee"
-            title="Buy a coffee for Kateryna Azarenko"
             className="by-me-a-coffee"
           />
         </a>

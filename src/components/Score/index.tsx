@@ -10,7 +10,7 @@ export const Score = ({ score }: { score: ScoreType }) => {
           {successRate}%
         </span>
       </div>
-      <div>Your score: {correct} of of {total}</div>
+      <div>Your score: {correct} of {total}</div>
     </div>
   );
 };

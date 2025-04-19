@@ -2,9 +2,10 @@ import { Logo } from '../Logo';
 
 export const Disclaimer = ({ startQuiz }: { startQuiz: () => void }) => {
   return (
-    <article>
-      <div className="disclaimer">
-        <Logo/>
+    <main className="disclaimer">
+        <h1>
+          <Logo/>
+        </h1>
         <p>
           This is a quiz to test your knowledge about Go. The questions have been created by{' '}
           <a href="https://github.com/KiteShi" target="_blank" rel="noopener noreferrer">
@@ -31,7 +32,6 @@ export const Disclaimer = ({ startQuiz }: { startQuiz: () => void }) => {
           Have fun!
         </p>
         <button onClick={startQuiz}>Start Quiz</button>
-      </div>
-    </article>
+    </main>
   );
 };
