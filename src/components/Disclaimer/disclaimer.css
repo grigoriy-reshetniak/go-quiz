@@ -1,5 +1,4 @@
 .disclaimer {
-  margin: 5rem 40rem;
   padding: 2rem;
 
   a {
@@ -19,9 +18,54 @@
 
   p {
     margin: 0.75rem 0;
+
+    &:last-of-type {
+      margin-bottom: 3rem;
+    }
   }
 
   h1 {
     margin: 0;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .disclaimer {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .disclaimer {
+    padding: 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .disclaimer {
+    padding: 2rem;
+    font-size: 1.125rem;
+    margin: 1rem auto 0;
+    max-width: 700px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .disclaimer {
+    padding: 2.5rem;
+    font-size: 1.25rem;
+    max-width: 800px;
+    margin: 1.5rem auto 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .disclaimer {
+    padding: 3rem;
+    font-size: 1.4rem;
+    max-width: 800px;
+    margin: 2rem auto 0;
   }
 }

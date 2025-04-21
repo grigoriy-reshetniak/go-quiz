@@ -6,7 +6,7 @@ import { Question } from './components/Question';
 import { Footer } from './components/Footer';
 import { Option } from './components/Option';
 import { Disclaimer } from './components/Disclaimer';
-import { Logo } from './components/Logo';
+import { TopNavLogo } from './components/Logo';
 import { Timer } from './components/Timer';
 import { Progress } from './components/Progress';
 import { Results } from './components/Results';
@@ -139,7 +139,7 @@ export const Quiz = () => {
       {quizStarted ? (
         <>
           <header>
-            <Logo handleReset={handleReset}/>
+            <TopNavLogo handleReset={handleReset}/>
             <Progress
               progress={questionIndex}
               total={quiz.length}
