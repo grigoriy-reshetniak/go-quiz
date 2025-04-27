@@ -51,3 +51,13 @@
     }
   }
 }
+
+button.logo {
+  height: 3rem;
+
+  span {
+    font-size: 2rem;
+    top: -1.7rem;
+    left: -0.8rem;
+  }
+}

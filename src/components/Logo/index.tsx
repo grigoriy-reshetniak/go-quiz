@@ -13,7 +13,7 @@ export const DisclaimerLogo = () =>
 ;
 
 export const TopNavLogo = ({ handleReset }: { handleReset: () => void }) =>
-  <button className="logo" onClick={handleReset}>
+  <button className="logo" onClick={handleReset} type="reset">
     <img src={logoSmall} alt="Go"/>
     <span>QUIZ</span>
   </button>

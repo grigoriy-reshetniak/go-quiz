@@ -167,6 +167,8 @@ export const Quiz = () => {
                 <button
                   onClick={handleNext}
                   disabled={selectedAnswers.length === 0}
+                  className="primary-btn"
+                  type="button"
                 >
                   {questionIndex === quiz.length - 1 ? 'Finish' : 'Next'}
                 </button>

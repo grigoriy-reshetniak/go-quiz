@@ -29,7 +29,7 @@ export const Disclaimer = ({ startQuiz }: { startQuiz: () => void }) => {
       <p>
         Have fun!
       </p>
-      <button onClick={startQuiz}>Start Quiz</button>
+      <button onClick={startQuiz} className="primary-btn" type="button">Start Quiz</button>
     </main>
   );
 };
