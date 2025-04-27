@@ -47,8 +47,10 @@ export type QuizResults = {
 };
 
 export type Score = {
-  correct: number,
-  total: number,
+  correctPoints: number,
+  correctAnswers: number,
+  totalPoints: number,
+  totalQuestions: number,
   successRate: number,
 }
 

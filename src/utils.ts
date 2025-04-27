@@ -27,3 +27,10 @@ export const getFromLocalStorage = <T extends keyof LocalStorage>(key: T): Local
 
   return data ? (JSON.parse(data) as LocalStorage[T]) : null;
 };
+
+export const getChartColor = (successRate: number): string => {
+  if (successRate > 84) return "#22c55e";
+  if (successRate > 59) return "#facc15";
+  if (successRate > 39) return "#f97316";
+  return "#ef4444";
+}

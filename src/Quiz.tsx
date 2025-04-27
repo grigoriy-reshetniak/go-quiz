@@ -47,12 +47,14 @@ export const Quiz = () => {
         selectedAnswers: [],
         ...question
       };
-    })
+    });
 
     return {
       score: {
-        correct: correctPoints,
-        total: totalPoints,
+        correctPoints,
+        totalPoints,
+        totalQuestions: quiz.length,
+        correctAnswers: checkedQuestions.filter((question) => question.isCorrect).length,
         successRate: Math.round((correctPoints / totalPoints) * 100)
       },
       checkedQuestions
@@ -125,6 +127,7 @@ export const Quiz = () => {
         setQuestionIndex(0);
         setAnsweredQuestions([]);
         setSelectedAnswers([]);
+        setCorrectPoints(0);
         startQuiz(false);
         finishQuiz(false);
         localStorage.clear();

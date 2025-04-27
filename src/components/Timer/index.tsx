@@ -18,6 +18,10 @@ export const Timer = ({ handleFinish, quizFinished }: TimerProps) => {
       handleFinish();
     }
 
+    if (quizFinished) {
+      return;
+    }
+
     const interval = setInterval(() => setSeconds(prevSeconds => {
       const updatedTime = prevSeconds - 1;
 
@@ -29,21 +33,13 @@ export const Timer = ({ handleFinish, quizFinished }: TimerProps) => {
     }), 1000);
 
     return () => clearInterval(interval);
-  }, [seconds, handleFinish]);
+  }, [seconds, handleFinish, quizFinished]);
 
   const formattedTime = `${Math.floor(seconds / 60)}:${(seconds % 60).toString().padStart(2, '0')}`;
 
   return (
-    <>
-      {quizFinished ? (
-        <h1>
-          Quiz finished
-        </h1>
-      ) : (
-        <div className={`timer ${seconds < 120 ? 'expiring' : ''}`}>
-          {formattedTime}
-        </div>
-      )}
-    </>
+    <div className={`timer ${seconds < 120 ? 'expiring' : ''}`}>
+      {formattedTime}
+    </div>
   )
 };
