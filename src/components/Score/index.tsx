@@ -6,7 +6,7 @@ const radius = 50;
 const circumference = 2 * Math.PI * radius;
 
 export const Score = ({ score }: { score: ScoreType }) => {
-  const { correctPoints, totalPoints, successRate } = score;
+  const { correctPoints, totalPoints, successRate, totalQuestions, correctAnswers } = score;
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
@@ -24,7 +24,8 @@ export const Score = ({ score }: { score: ScoreType }) => {
             cy="60"
             r={radius}
             style={{
-              stroke: successRate === 0 ? 'black' : '#e5e7eb'
+              stroke: successRate === 0 ? 'black' : '#e5e7eb',
+              filter: successRate === 100 ? 'drop-shadow(0 0 6px #22c55e)' : ''
             }}
           />
           <circle
@@ -43,10 +44,22 @@ export const Score = ({ score }: { score: ScoreType }) => {
           {progress}%
         </span>
       </div>
-      <h1>
-        Quiz finished
-      </h1>
-      <div>Your score: {correctPoints} of {totalPoints}</div>
+      <div>
+        <h1>
+          Quiz finished
+        </h1>
+        <span>Your score:</span>
+        <ul>
+          <li>{correctAnswers} of {totalQuestions} questions answered</li>
+          <li>{correctPoints} of {totalPoints} points earned</li>
+        </ul>
+      </div>
+      <img
+        /* eslint-disable-next-line max-len */
+        src="https://camo.githubusercontent.com/a72f086b878c2e74b90d5dbd3360e7a4aa132a219a662f4d83b7c243298fea4d/68747470733a2f2f7261772e6769746875622e636f6d2f676f6c616e672d73616d706c65732f676f706865722d766563746f722f6d61737465722f676f706865722e706e67"
+        alt="Gopher by Takuya Ueda"
+        title="Gopher by Takuya Ueda"
+      />
     </div>
   );
 };
