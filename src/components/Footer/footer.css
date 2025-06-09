@@ -27,17 +27,22 @@ footer {
     height: 1.5rem;
   }
 
-  .by-me-a-coffee {
-    height: 3rem;
-  }
+  .buy-me-a-coffee {
+    background-color: rgb(95, 127, 255);
+    padding: 0.2rem 0.7rem;
+    border-radius: 0.5rem;
+    font-family: "Cookie", cursive;
+    font-style: normal;
+    font-size: 1.5rem;
 
-  .subsection {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    &:hover {
+      color: var(--white);
+    }
 
-    a:first-child {
-      margin-right: 2rem;
+    img {
+      position: relative;
+      top: 3px;
+      padding-right: 0.3rem;
     }
   }
 
